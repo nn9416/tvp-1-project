@@ -64,7 +64,7 @@ namespace tvp_1_project.Model
         }
         #endregion
 
-        public static List<Offer> ReadAll() => FileSystemCRUD.ReadAll(DIRECTORY).Cast<Offer>().ToList();
+        public static List<Offer> ReadAll() => FileSystemCRUD.ReadAll(path: DIRECTORY).Cast<Offer>().ToList();
 
         public override string ToString()
         {
