@@ -9,7 +9,6 @@ namespace tvp_1_project.Model
     public class Customer : User, IConnection<Customer>, ISerializable
     {
         public Customer() { }
-
         public Customer(string firstName, string lastName, string ssn, DateTime birthDate, string phoneNumber, string username, string password) : base(username, password)
         {
             Id = Guid.NewGuid().ToString();
@@ -48,32 +47,16 @@ namespace tvp_1_project.Model
         #endregion
 
         #region IConnection<>
-        public void Create()
-        {
-            string path = $@"{DIRECTORY}\{Id}";
-            FileSystemCRUD.Create(path, this);
-        }
+        public void Create() => FileSystemCRUD.Create(path: $@"{DIRECTORY}\{Id}", serializableData: this);
 
-        public Customer Read()
-        {
-            string path = $@"{DIRECTORY}\{Id}";
-            return FileSystemCRUD.Read(path) as Customer;
-        }
+        public Customer Read() => FileSystemCRUD.Read(path: $@"{DIRECTORY}\{Id}") as Customer;
 
-        public void Update(Customer data)
-        {
-            string path = $@"{DIRECTORY}\{Id}";
-            FileSystemCRUD.Update(path, data);
-        }
+        public void Update(Customer data) => FileSystemCRUD.Update(path: $@"{DIRECTORY}\{Id}", serializableData: data);
 
-        public void Delete()
-        {
-            string path = $@"{DIRECTORY}\{Id}";
-            FileSystemCRUD.Delete(path);
-        }
+        public void Delete() => FileSystemCRUD.Delete(path: $@"{DIRECTORY}\{Id}");
         #endregion
 
-        public static List<Customer> ReadAll() => FileSystemCRUD.ReadAll(DIRECTORY).Cast<Customer>().ToList();
+        public static List<Customer> ReadAll() => FileSystemCRUD.ReadAll(path: DIRECTORY).Cast<Customer>().ToList();
 
         public static string DIRECTORY { get; } = AppSettings.GetDirectory("customers");
         public string Id { get; set; }
