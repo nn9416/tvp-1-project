@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="BussinesLogic\CustomEventArgs.cs" />
+    <Compile Include="BussinesLogic\ResponsiveLayout.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
