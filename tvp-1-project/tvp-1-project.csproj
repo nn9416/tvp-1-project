@@ -62,6 +62,8 @@
     <Compile Include="Model\FileSystemCRUD.cs" />
     <Compile Include="Model\IConnection.cs" />
     <Compile Include="Model\IDataRepository.cs" />
+    <Compile Include="Model\ILoginRepository.cs" />
+    <Compile Include="Model\LoginRepository.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
