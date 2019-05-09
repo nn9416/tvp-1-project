@@ -53,6 +53,7 @@
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(190, 21);
             this.comboBox.TabIndex = 1;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // UCSelectInput
             // 
