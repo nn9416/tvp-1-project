@@ -16,6 +16,10 @@ namespace tvp_1_project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            AppSettings.CreateDirectories();
+            AppSettings.CreateAdmin();
+
             Application.Run(new Form1());
         }
     }

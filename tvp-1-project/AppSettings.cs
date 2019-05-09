@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using tvp_1_project.Model;
 
 namespace tvp_1_project
 {
@@ -19,6 +20,15 @@ namespace tvp_1_project
                 Directory.CreateDirectory(GetDirectory("customers"));
                 Directory.CreateDirectory(GetDirectory("offers"));
                 Directory.CreateDirectory(GetDirectory("bookings"));
+            }
+        }
+
+        public static void CreateAdmin()
+        {
+            if (Admin.Read() == null)
+            {
+                Admin admin = new Admin("admin", "admin");
+                admin.Create();
             }
         }
     }
