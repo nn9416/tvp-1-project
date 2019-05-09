@@ -57,6 +57,7 @@
     <Compile Include="Model\CarRepo.cs" />
     <Compile Include="Model\DataRepository.cs" />
     <Compile Include="Model\FileSystemCRUD.cs" />
+    <Compile Include="Model\IConnection.cs" />
     <Compile Include="Model\IDataRepository.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
