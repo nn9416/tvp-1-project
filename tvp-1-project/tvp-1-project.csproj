@@ -86,6 +86,12 @@
     <Compile Include="View\UserControls\Input\UCTextInput.Designer.cs">
       <DependentUpon>UCTextInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\UCDataViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\UCDataViewer.Designer.cs">
+      <DependentUpon>UCDataViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\UCSideMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Input\UCTextInput.resx">
       <DependentUpon>UCTextInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\UCDataViewer.resx">
+      <DependentUpon>UCDataViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\UCSideMenu.resx">
       <DependentUpon>UCSideMenu.cs</DependentUpon>
