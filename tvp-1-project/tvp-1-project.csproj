@@ -68,6 +68,12 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UserControls\Input\UCSelectInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Input\UCSelectInput.Designer.cs">
+      <DependentUpon>UCSelectInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Input\UCTextInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +89,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\UserControls\Input\UCSelectInput.resx">
+      <DependentUpon>UCSelectInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Input\UCTextInput.resx">
       <DependentUpon>UCTextInput.cs</DependentUpon>
     </EmbeddedResource>

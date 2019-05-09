@@ -9,8 +9,7 @@ namespace tvp_1_project.View.UserControls.Input
             InitializeComponent();
         }
 
-        public string TextInputLabelText { get => textInputLabel.Text; set => textInputLabel.Text = value; }
-        public TextBox TextBox { get => textInputTextBox; }
-        public bool IsPasswordField { get => textInputTextBox.UseSystemPasswordChar; set => textInputTextBox.UseSystemPasswordChar = value; }
+        public string LabelText { get => label.Text; set => label.Text = value; }
+        public TextBox TextBox { get => textBox; }
     }
 }
