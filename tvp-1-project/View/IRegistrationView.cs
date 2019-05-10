@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace tvp_1_project.View
 {
-    interface IRegistrationView
+    public interface IRegistrationView
     {
-    }
+        Presenter.PRegistration Presenter { get; set; }
+        string FirstName { get; }
+        string LastName { get; }
+        string Ssn { get; }
+        DateTime BirthDate { get; }
+        string PhoneNumber { get; }
+        string Username { get; }
+        string Password { get; }
+        void RegistrationProcessInfo(bool success);
+    } 
 }
