@@ -68,6 +68,7 @@
     <Compile Include="Model\LoginRepository.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\PLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FLogin.cs">
@@ -147,9 +148,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenter\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\carRepo.xml" />
   </ItemGroup>

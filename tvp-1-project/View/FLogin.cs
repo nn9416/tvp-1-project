@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace tvp_1_project.View
@@ -18,11 +11,11 @@ namespace tvp_1_project.View
         }
 
         #region ILoginView
-        public Presenter.PLogin Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Presenter.PLogin Presenter { get; set; }
 
-        public string Username => throw new NotImplementedException();
+        public string Username { get => usernameUcTextInput.TextBox.Text; }
 
-        public string Password => throw new NotImplementedException();
+        public string Password { get => passwordUcTextInput.TextBox.Text; }
         #endregion
 
         #region Events
@@ -35,15 +28,9 @@ namespace tvp_1_project.View
             }
         }
 
-        private void SignupButton_Click(object sender, EventArgs e)
-        {
-            Presenter.ShowFRegistration();
-        }
+        private void SignupButton_Click(object sender, EventArgs e) => Presenter.ShowFRegistration();
 
-        private void CloseLabel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void CloseLabel_Click(object sender, EventArgs e) => Close();
         #endregion
     }
 }
