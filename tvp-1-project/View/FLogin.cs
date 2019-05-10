@@ -10,13 +10,22 @@ using System.Windows.Forms;
 
 namespace tvp_1_project.View
 {
-    public partial class FLogin : Form
-    {
+    public partial class FLogin : Form, ILoginView
+    {       
         public FLogin()
         {
             InitializeComponent();
         }
 
+        #region ILoginView
+        public Presenter.PLogin Presenter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public string Username => throw new NotImplementedException();
+
+        public string Password => throw new NotImplementedException();
+        #endregion
+
+        #region Events
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (Presenter.TryLogin(Username, Password))
@@ -35,5 +44,6 @@ namespace tvp_1_project.View
         {
             Close();
         }
+        #endregion
     }
 }

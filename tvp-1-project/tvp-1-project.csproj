@@ -76,6 +76,7 @@
     <Compile Include="View\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\UserControls\Input\UCDateSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
