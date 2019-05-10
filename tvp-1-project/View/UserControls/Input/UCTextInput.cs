@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace tvp_1_project.View.UserControls.Input
 {
@@ -9,7 +10,11 @@ namespace tvp_1_project.View.UserControls.Input
             InitializeComponent();
         }
 
+        private void TextBox_Enter(object sender, System.EventArgs e) => underLine.BackColor = Color.White;
+
+        private void TextBox_Leave(object sender, System.EventArgs e) => underLine.BackColor = Color.LightGray;
+
         public string LabelText { get => label.Text; set => label.Text = value; }
-        public TextBox TextBox { get => textBox; }
+        public TextBox TextBox { get => textBox; }        
     }
 }
