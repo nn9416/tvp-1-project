@@ -30,7 +30,7 @@
         {
             this.label = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.underLine = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label
@@ -51,21 +51,24 @@
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(180, 13);
             this.textBox.TabIndex = 1;
+            this.textBox.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.textBox.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
-            // panel1
+            // underLine
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(10, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 2);
-            this.panel1.TabIndex = 2;
+            this.underLine.BackColor = System.Drawing.Color.LightGray;
+            this.underLine.ForeColor = System.Drawing.Color.White;
+            this.underLine.Location = new System.Drawing.Point(10, 34);
+            this.underLine.Name = "underLine";
+            this.underLine.Size = new System.Drawing.Size(190, 2);
+            this.underLine.TabIndex = 2;
             // 
             // UCTextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.underLine);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.label);
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
@@ -81,6 +84,6 @@
 
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel underLine;
     }
 }
