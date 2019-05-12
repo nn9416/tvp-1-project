@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.usernameUcTextInput = new tvp_1_project.View.UserControls.Input.UCTextInput();
             this.passwordUcTextInput = new tvp_1_project.View.UserControls.Input.UCTextInput();
             this.loginButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.closeLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.flowLayoutPanel, 0, 0);
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 30);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
@@ -51,18 +51,18 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(360, 187);
             this.tableLayoutPanel.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.flowLayoutPanel1.Controls.Add(this.usernameUcTextInput);
-            this.flowLayoutPanel1.Controls.Add(this.passwordUcTextInput);
-            this.flowLayoutPanel1.Controls.Add(this.loginButton);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(72, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(216, 181);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel.Controls.Add(this.usernameUcTextInput);
+            this.flowLayoutPanel.Controls.Add(this.passwordUcTextInput);
+            this.flowLayoutPanel.Controls.Add(this.loginButton);
+            this.flowLayoutPanel.Controls.Add(this.button1);
+            this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(72, 3);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(216, 181);
+            this.flowLayoutPanel.TabIndex = 0;
             // 
             // usernameUcTextInput
             // 
@@ -142,7 +142,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLogin";
             this.tableLayoutPanel.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private UserControls.Input.UCTextInput usernameUcTextInput;
         private UserControls.Input.UCTextInput passwordUcTextInput;
         private System.Windows.Forms.Button loginButton;
