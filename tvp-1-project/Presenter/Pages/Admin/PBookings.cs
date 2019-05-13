@@ -54,6 +54,7 @@ namespace tvp_1_project.Presenter.Pages.Admin
             return offersForCar;
         }
 
-        internal bool TryCreateNew(Dictionary<string, object> values) => Validation.ValidateBooking(values);
+        // TODO: Implement validation for bookings
+        //internal bool TryCreateNew(Dictionary<string, object> values) => Validation.ValidateBooking(values);
     }
 }
