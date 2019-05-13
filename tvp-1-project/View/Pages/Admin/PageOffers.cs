@@ -63,15 +63,15 @@ namespace tvp_1_project.View.Pages.Admin
                 { "Price", Price.TextBox.Text }
             };
 
-            if (Presenter.TryCreateNew(values))
-            {
-                CrudButtonClick?.Invoke(sender, e);
-                Presenter.UpdateData();
-            }
-            else
-            {
-                // TODO: Notify user of wrong input
-            }
+            //if (Presenter.TryCreateNew(values))
+            //{
+            //    CrudButtonClick?.Invoke(sender, e);
+            //    Presenter.UpdateData();
+            //}
+            //else
+            //{
+            //    // TODO: Notify user of wrong input
+            //}
         }
         #endregion
 

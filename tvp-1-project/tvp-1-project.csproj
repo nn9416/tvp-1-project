@@ -79,6 +79,12 @@
     <Compile Include="View\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRegistration.resx">
       <DependentUpon>FRegistration.cs</DependentUpon>
