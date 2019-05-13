@@ -1,6 +1,6 @@
 ﻿namespace tvp_1_project.View.Pages.Admin
 {
-    partial class PageCars
+    partial class PageCustomers
     {
         /// <summary> 
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.ucDataViewer.ButtonClick += new System.EventHandler<tvp_1_project.BussinesLogic.CustomEventArgs>(this.UcDataViewerButtons_Click);
             this.ucDataViewer.Load += new System.EventHandler(this.UcDataViewer_Load);
             // 
-            // PageCars
+            // PageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -54,7 +54,7 @@
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
             this.MinimumSize = new System.Drawing.Size(900, 590);
-            this.Name = "PageCars";
+            this.Name = "PageCustomers";
             this.Size = new System.Drawing.Size(900, 590);
             this.ResumeLayout(false);
 
