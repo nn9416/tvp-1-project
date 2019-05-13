@@ -66,7 +66,7 @@
             // 
             // usernameUcTextInput
             // 
-            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.usernameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.usernameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.usernameUcTextInput.LabelText = "Korisničko ime:";
@@ -77,7 +77,7 @@
             // 
             // passwordUcTextInput
             // 
-            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.passwordUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.passwordUcTextInput.ForeColor = System.Drawing.Color.White;
             this.passwordUcTextInput.LabelText = "Lozinka:";
@@ -118,10 +118,10 @@
             // 
             this.closeLabel.AutoSize = true;
             this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLabel.Location = new System.Drawing.Point(358, 9);
+            this.closeLabel.Font = new System.Drawing.Font("Operator Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.closeLabel.Location = new System.Drawing.Point(354, 8);
             this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(14, 15);
+            this.closeLabel.Size = new System.Drawing.Size(18, 19);
             this.closeLabel.TabIndex = 1;
             this.closeLabel.Text = "X";
             this.closeLabel.Click += new System.EventHandler(this.CloseLabel_Click);
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(384, 220);
             this.ControlBox = false;
             this.Controls.Add(this.closeLabel);

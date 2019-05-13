@@ -76,7 +76,7 @@
             // 
             // firstNameUcTextInput
             // 
-            this.firstNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.firstNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.firstNameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.firstNameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.firstNameUcTextInput.LabelText = "Ime:";
@@ -87,7 +87,7 @@
             // 
             // lastNameUcTextInput
             // 
-            this.lastNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.lastNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.lastNameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.lastNameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.lastNameUcTextInput.LabelText = "Prezime:";
@@ -98,7 +98,7 @@
             // 
             // ssnUcTextInput
             // 
-            this.ssnUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.ssnUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.ssnUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ssnUcTextInput.ForeColor = System.Drawing.Color.White;
             this.ssnUcTextInput.LabelText = "JMBG:";
@@ -120,7 +120,7 @@
             // 
             // phoneUcTextInput
             // 
-            this.phoneUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.phoneUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.phoneUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.phoneUcTextInput.ForeColor = System.Drawing.Color.White;
             this.phoneUcTextInput.LabelText = "Telefon:";
@@ -131,7 +131,7 @@
             // 
             // usernameUcTextInput
             // 
-            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.usernameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.usernameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.usernameUcTextInput.LabelText = "Korisničko ime:";
@@ -142,7 +142,7 @@
             // 
             // passwordUcTextInput
             // 
-            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.passwordUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.passwordUcTextInput.ForeColor = System.Drawing.Color.White;
             this.passwordUcTextInput.LabelText = "Lozinka:";
@@ -183,10 +183,10 @@
             // 
             this.closeLabel.AutoSize = true;
             this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            this.closeLabel.Location = new System.Drawing.Point(297, 9);
+            this.closeLabel.Font = new System.Drawing.Font("Operator Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.closeLabel.Location = new System.Drawing.Point(293, 8);
             this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(14, 15);
+            this.closeLabel.Size = new System.Drawing.Size(18, 19);
             this.closeLabel.TabIndex = 1;
             this.closeLabel.Text = "X";
             this.closeLabel.Click += new System.EventHandler(this.Cancel_Click);
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(323, 478);
             this.Controls.Add(this.closeLabel);
             this.Controls.Add(this.tableLayoutPanel);

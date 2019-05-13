@@ -8,11 +8,12 @@ namespace tvp_1_project.View.UserControls.Input
         public UCTextInput()
         {
             InitializeComponent();
+            underLine.BackColor = Color.Gray;
         }
 
         private void TextBox_Enter(object sender, System.EventArgs e) => underLine.BackColor = Color.White;
 
-        private void TextBox_Leave(object sender, System.EventArgs e) => underLine.BackColor = Color.LightGray;
+        private void TextBox_Leave(object sender, System.EventArgs e) => underLine.BackColor = Color.Gray;
 
         public string LabelText { get => label.Text; set => label.Text = value; }
         public TextBox TextBox { get => textBox; }        

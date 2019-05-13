@@ -50,6 +50,7 @@ namespace tvp_1_project.View.Pages.Admin
             ucDataViewer.DataGridView.Columns["Transmission"].HeaderText = "Menjač";
             ucDataViewer.DataGridView.Columns["Body"].HeaderText = "Karoserija";
             ucDataViewer.DataGridView.Columns["NumberOfDoors"].HeaderText = "Broj vrata";
+            SetSearchCategoriesComboBox();
         }
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
@@ -108,6 +109,13 @@ namespace tvp_1_project.View.Pages.Admin
                 SelectBody,
                 SelectNumberOfDoors
             };
+        }
+
+        private void SetSearchCategoriesComboBox()
+        {                     
+            ucDataViewer.SearchCategoryComboBox.DisplayMember = "HeaderText";
+            ucDataViewer.SearchCategoryComboBox.ValueMember = "Name";
+            ucDataViewer.SearchCategoryComboBox.DataSource = ucDataViewer.DataGridView.Columns;
         }
 
         private UCSelectInput SelectYear { get; set; }

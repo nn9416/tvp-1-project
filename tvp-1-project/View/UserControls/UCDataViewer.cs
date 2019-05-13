@@ -128,9 +128,10 @@ namespace tvp_1_project.View.UserControls
             {
                 addNewButton.Enabled = deleteButton.Enabled = false;
                 updateButton.Tag = "Create";
-                DataGridView.ClearSelection();
+                DataGridView.ClearSelection();                
                 ClearInputControls();
                 DataGridView.Enabled = false;
+                dataSearchSplitContainer.Panel2Collapsed = true;
                 mainSplitContainer.Panel2.BackColor = Color.FromArgb(8, 93, 251);
             }
             else
@@ -138,6 +139,7 @@ namespace tvp_1_project.View.UserControls
                 addNewButton.Enabled = deleteButton.Enabled = true;
                 updateButton.Tag = "Update";
                 DataGridView.Enabled = true;
+                dataSearchSplitContainer.Panel2Collapsed = false;
                 mainSplitContainer.Panel2.BackColor = Color.FromArgb(93, 251, 8);
             }
         }
@@ -230,7 +232,29 @@ namespace tvp_1_project.View.UserControls
         }
 
         public DataGridView DataGridView { get => dataGridView; }
+        public ComboBox SearchCategoryComboBox { get => searchCategoryComboBox; }
+        public TextBox SearchValueTextBox { get => searchValueTextBox; }
         public FlowLayoutPanel InputControlsFlowLayoutPanel { get => inputControlsFlowLayoutPanel; }
         public List<Control> InputControls { get; set; }
+
+        private void SearchValueTextBox_TextChanged(object sender, EventArgs e)
+        {
+            DataGridViewTextBoxColumn temp = searchCategoryComboBox.SelectedValue as DataGridViewTextBoxColumn;
+            try
+            {
+                foreach (DataGridViewRow row in DataGridView.Rows)
+                {
+                    if (row.Cells[$"{temp.Name}"].Value.ToString().Contains(searchValueTextBox.Text))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }        
     }
 }

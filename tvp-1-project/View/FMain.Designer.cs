@@ -88,6 +88,7 @@
             // 
             // pagesPanel
             // 
+            this.pagesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.pagesPanel.Location = new System.Drawing.Point(214, 30);
             this.pagesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pagesPanel.Name = "pagesPanel";
@@ -106,7 +107,6 @@
             // 
             // ucSideMenu
             // 
-            this.ucSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
             this.ucSideMenu.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ucSideMenu.ForeColor = System.Drawing.Color.White;
             this.ucSideMenu.Location = new System.Drawing.Point(4, 30);
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(33)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(1118, 624);
             this.Controls.Add(this.currentUserLabel);
             this.Controls.Add(this.pagesPanel);
