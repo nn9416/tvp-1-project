@@ -64,6 +64,7 @@
     <Compile Include="Model\LoginRepository.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\Pages\Admin\PBookings.cs" />
     <Compile Include="Presenter\Pages\Admin\PCars.cs" />
     <Compile Include="Presenter\Pages\Admin\PCustomers.cs" />
     <Compile Include="Presenter\Pages\Admin\POffers.cs" />
