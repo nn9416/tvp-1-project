@@ -17,12 +17,11 @@ namespace tvp_1_project.Presenter.Pages.Admin
             _view = view;
             _repository = repository;
             view.Presenter = this;
-            UpdateData();
         }
 
-        internal void UpdateData() => Cars = _repository.GetCars();
+        internal void UpdateData() => _view.UpdateDataViewer(_repository.GetCars());
 
-        internal void GetCars() => _view.PopulateDataViewer(Cars);
+        internal void GetCars() => _view.PopulateDataViewer(_repository.GetCars());
 
         internal List<string> GetYears() => _repository.GetYears();
 
@@ -51,7 +50,5 @@ namespace tvp_1_project.Presenter.Pages.Admin
 
         internal List<string> SetNumberOfDoors(string model) => _repository.GetNumberOfDoorsForModel(model, carModels);
         #endregion
-
-        private static List<Car> Cars { get; set; }
     }
 }
