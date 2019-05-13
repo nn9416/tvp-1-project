@@ -85,6 +85,7 @@
       <DependentUpon>FRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\IMainView.cs" />
     <Compile Include="View\IRegistrationView.cs" />
     <Compile Include="View\Pages\Admin\IBookingsView.cs" />
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
