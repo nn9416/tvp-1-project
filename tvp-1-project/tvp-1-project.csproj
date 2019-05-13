@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IRegistrationView.cs" />
+    <Compile Include="View\Pages\Admin\IBookingsView.cs" />
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
     <Compile Include="View\Pages\Admin\ICustomersView.cs" />
     <Compile Include="View\Pages\Admin\IOffersView.cs" />
