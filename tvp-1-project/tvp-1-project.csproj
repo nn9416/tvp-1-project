@@ -66,6 +66,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Presenter\Pages\Admin\PCars.cs" />
     <Compile Include="Presenter\Pages\Admin\PCustomers.cs" />
+    <Compile Include="Presenter\Pages\Admin\POffers.cs" />
     <Compile Include="Presenter\PLogin.cs" />
     <Compile Include="Presenter\PRegistration.cs" />
     <Compile Include="Program.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="View\IRegistrationView.cs" />
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
     <Compile Include="View\Pages\Admin\ICustomersView.cs" />
+    <Compile Include="View\Pages\Admin\IOffersView.cs" />
     <Compile Include="View\Pages\Admin\PageCars.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +99,12 @@
     </Compile>
     <Compile Include="View\Pages\Admin\PageCustomers.Designer.cs">
       <DependentUpon>PageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Admin\PageOffers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pages\Admin\PageOffers.Designer.cs">
+      <DependentUpon>PageOffers.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Input\UCDateSelect.cs">
       <SubType>UserControl</SubType>
@@ -148,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pages\Admin\PageCustomers.resx">
       <DependentUpon>PageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pages\Admin\PageOffers.resx">
+      <DependentUpon>PageOffers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Input\UCDateSelect.resx">
       <DependentUpon>UCDateSelect.cs</DependentUpon>
