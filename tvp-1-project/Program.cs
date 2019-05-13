@@ -25,8 +25,6 @@ namespace tvp_1_project
                 var mainPresenter = new Presenter.PMain(mainView, mainRepository);
                 Application.Run(mainView);
             }
-
-            Application.Run(new Form1());
         }
     }
 }
