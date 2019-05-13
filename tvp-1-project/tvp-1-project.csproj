@@ -64,6 +64,7 @@
     <Compile Include="Model\LoginRepository.cs" />
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\Pages\Admin\PBookings.cs" />
     <Compile Include="Presenter\Pages\Admin\PCars.cs" />
     <Compile Include="Presenter\Pages\Admin\PCustomers.cs" />
     <Compile Include="Presenter\Pages\Admin\POffers.cs" />
@@ -85,9 +86,16 @@
     </Compile>
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IRegistrationView.cs" />
+    <Compile Include="View\Pages\Admin\IBookingsView.cs" />
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
     <Compile Include="View\Pages\Admin\ICustomersView.cs" />
     <Compile Include="View\Pages\Admin\IOffersView.cs" />
+    <Compile Include="View\Pages\Admin\PageBookings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pages\Admin\PageBookings.Designer.cs">
+      <DependentUpon>PageBookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\Admin\PageCars.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRegistration.resx">
       <DependentUpon>FRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pages\Admin\PageBookings.resx">
+      <DependentUpon>PageBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pages\Admin\PageCars.resx">
       <DependentUpon>PageCars.cs</DependentUpon>
