@@ -50,6 +50,7 @@
     <Compile Include="BussinesLogic\Authentication.cs" />
     <Compile Include="BussinesLogic\CustomEventArgs.cs" />
     <Compile Include="BussinesLogic\ResponsiveLayout.cs" />
+    <Compile Include="BussinesLogic\Validation.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +71,7 @@
     <Compile Include="Model\Offer.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Presenter\PLogin.cs" />
+    <Compile Include="Presenter\PRegistration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FLogin.cs">
@@ -78,7 +80,14 @@
     <Compile Include="View\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FRegistration.Designer.cs">
+      <DependentUpon>FRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\IRegistrationView.cs" />
     <Compile Include="View\UserControls\Input\UCDateSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FRegistration.resx">
+      <DependentUpon>FRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Input\UCDateSelect.resx">
       <DependentUpon>UCDateSelect.cs</DependentUpon>
