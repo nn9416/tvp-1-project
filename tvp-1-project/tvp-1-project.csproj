@@ -82,11 +82,11 @@
     </Compile>
     <Compile Include="View\ILoginView.cs" />
     <Compile Include="View\IRegistrationView.cs" />
-    <Compile Include="View\Pages\Admin\UCCars.cs">
+    <Compile Include="View\Pages\Admin\PageCars.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Pages\Admin\UCCars.Designer.cs">
-      <DependentUpon>UCCars.cs</DependentUpon>
+    <Compile Include="View\Pages\Admin\PageCars.Designer.cs">
+      <DependentUpon>PageCars.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Input\UCDateSelect.cs">
       <SubType>UserControl</SubType>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace tvp_1_project.View.Pages.Admin
 {
-    public partial class UCCars : UserControl
+    public partial class PageCars : UserControl
     {
-        public UCCars()
+        public PageCars()
         {
             InitializeComponent();
         }

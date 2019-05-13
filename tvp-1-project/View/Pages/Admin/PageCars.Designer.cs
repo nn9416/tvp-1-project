@@ -1,6 +1,6 @@
 ﻿namespace tvp_1_project.View.Pages.Admin
 {
-    partial class UCCars
+    partial class PageCars
     {
         /// <summary> 
         /// Required designer variable.
