@@ -9,31 +9,22 @@ namespace tvp_1_project.Presenter.Pages.Admin
     {
         private readonly ICarsView _view;
         private readonly IDataRepository _repository;
-
         private List<CarMakes> carMakes;
-        private List<CarModels> carModels;
+        private List<CarModels> carModels;        
 
         public PCars(ICarsView view, IDataRepository repository)
         {
             _view = view;
             _repository = repository;
             view.Presenter = this;
+            UpdateData();
         }
 
-        internal void UpdateData()
-        {
-            _view.UpdateDataViewer(_repository.GetCars());
-        }
+        internal void UpdateData() => Cars = _repository.GetCars();
 
-        internal void GetCars()
-        {
-            _view.PopulateDataViewer(_repository.GetCars());
-        }
+        internal void GetCars() => _view.PopulateDataViewer(Cars);
 
-        internal List<string> GetYears()
-        {
-            return _repository.GetYears();
-        }
+        internal List<string> GetYears() => _repository.GetYears();
 
         #region Setters for input controls
         internal List<string> SetMakes(string year)
@@ -48,35 +39,19 @@ namespace tvp_1_project.Presenter.Pages.Admin
             return carModels.Select(i => i.Model).ToList();
         }
 
-        internal List<string> SetDisplacement(string model)
-        {
-            return _repository.GetDisplacementForModel(model, carModels);
-        }
+        internal List<string> SetDisplacement(string model) => _repository.GetDisplacementForModel(model, carModels);
 
-        internal List<string> SetFuel(string model)
-        {
-            return _repository.GetFuelForModel(model, carModels);
-        }
+        internal List<string> SetFuel(string model) => _repository.GetFuelForModel(model, carModels);
 
-        internal List<string> SetDrive(string model)
-        {
-            return _repository.GetDriveForModel(model, carModels);
-        }
+        internal List<string> SetDrive(string model) => _repository.GetDriveForModel(model, carModels);
 
-        internal List<string> SetTransmission(string model)
-        {
-            return _repository.GetTransmissionForModel(model, carModels);
-        }
+        internal List<string> SetTransmission(string model) => _repository.GetTransmissionForModel(model, carModels);
 
-        internal List<string> SetBody(string model)
-        {
-            return _repository.GetBodyTypesForModel(model, carModels);
-        }
+        internal List<string> SetBody(string model) => _repository.GetBodyTypesForModel(model, carModels);
 
-        internal List<string> SetNumberOfDoors(string model)
-        {
-            return _repository.GetNumberOfDoorsForModel(model, carModels);
-        }
+        internal List<string> SetNumberOfDoors(string model) => _repository.GetNumberOfDoorsForModel(model, carModels);
         #endregion
+
+        private static List<Car> Cars { get; set; }
     }
 }

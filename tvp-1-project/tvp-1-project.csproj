@@ -135,6 +135,9 @@
     <EmbeddedResource Include="View\FRegistration.resx">
       <DependentUpon>FRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Pages\Admin\PageCars.resx">
+      <DependentUpon>PageCars.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Input\UCDateSelect.resx">
       <DependentUpon>UCDateSelect.cs</DependentUpon>
     </EmbeddedResource>
