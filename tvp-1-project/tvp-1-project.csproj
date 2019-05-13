@@ -90,6 +90,12 @@
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
     <Compile Include="View\Pages\Admin\ICustomersView.cs" />
     <Compile Include="View\Pages\Admin\IOffersView.cs" />
+    <Compile Include="View\Pages\Admin\PageBookings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pages\Admin\PageBookings.Designer.cs">
+      <DependentUpon>PageBookings.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\Admin\PageCars.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FRegistration.resx">
       <DependentUpon>FRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pages\Admin\PageBookings.resx">
+      <DependentUpon>PageBookings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pages\Admin\PageCars.resx">
       <DependentUpon>PageCars.cs</DependentUpon>

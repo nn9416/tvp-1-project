@@ -10,6 +10,6 @@ namespace tvp_1_project.View.Pages.Admin
         void PopulateDataViewer(List<Booking> data);
         void UpdateDataViewer(List<Booking> data);
         void SetCustomersComboBox(List<Customer> customers);
-        void SetCarsComboBox(List<Car> list);
+        void SetCarsComboBox(List<Car> cars);
     }
 }
