@@ -90,6 +90,7 @@
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
     <Compile Include="View\Pages\Admin\ICustomersView.cs" />
     <Compile Include="View\Pages\Admin\IOffersView.cs" />
+    <Compile Include="View\Pages\Admin\IStatisticsView.cs" />
     <Compile Include="View\Pages\Admin\PageBookings.cs">
       <SubType>UserControl</SubType>
     </Compile>
