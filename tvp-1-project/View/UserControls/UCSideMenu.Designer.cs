@@ -30,12 +30,12 @@
         {
             this.mainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.adminFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.customerFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.carsButton = new System.Windows.Forms.Button();
             this.customersButton = new System.Windows.Forms.Button();
             this.offersButton = new System.Windows.Forms.Button();
             this.bookingsButton = new System.Windows.Forms.Button();
             this.statisticsButton = new System.Windows.Forms.Button();
+            this.customerFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.currentBookingsButton = new System.Windows.Forms.Button();
             this.bookNewButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
@@ -72,18 +72,6 @@
             this.adminFlowLayoutPanel.Size = new System.Drawing.Size(210, 240);
             this.adminFlowLayoutPanel.TabIndex = 0;
             // 
-            // customerFlowLayoutPanel
-            // 
-            this.customerFlowLayoutPanel.Controls.Add(this.currentBookingsButton);
-            this.customerFlowLayoutPanel.Controls.Add(this.bookNewButton);
-            this.customerFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.customerFlowLayoutPanel.Location = new System.Drawing.Point(0, 240);
-            this.customerFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.customerFlowLayoutPanel.Name = "customerFlowLayoutPanel";
-            this.customerFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
-            this.customerFlowLayoutPanel.Size = new System.Drawing.Size(210, 102);
-            this.customerFlowLayoutPanel.TabIndex = 1;
-            // 
             // carsButton
             // 
             this.carsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
@@ -96,6 +84,7 @@
             this.carsButton.Tag = "cars";
             this.carsButton.Text = "Automobili";
             this.carsButton.UseVisualStyleBackColor = false;
+            this.carsButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // customersButton
             // 
@@ -109,6 +98,7 @@
             this.customersButton.Tag = "customers";
             this.customersButton.Text = "Kupci";
             this.customersButton.UseVisualStyleBackColor = false;
+            this.customersButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // offersButton
             // 
@@ -122,6 +112,7 @@
             this.offersButton.Tag = "offers";
             this.offersButton.Text = "Ponude";
             this.offersButton.UseVisualStyleBackColor = false;
+            this.offersButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // bookingsButton
             // 
@@ -135,6 +126,7 @@
             this.bookingsButton.Tag = "bookings";
             this.bookingsButton.Text = "Rezervacije";
             this.bookingsButton.UseVisualStyleBackColor = false;
+            this.bookingsButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // statisticsButton
             // 
@@ -148,6 +140,19 @@
             this.statisticsButton.Tag = "statistics";
             this.statisticsButton.Text = "Statistika";
             this.statisticsButton.UseVisualStyleBackColor = false;
+            this.statisticsButton.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // customerFlowLayoutPanel
+            // 
+            this.customerFlowLayoutPanel.Controls.Add(this.currentBookingsButton);
+            this.customerFlowLayoutPanel.Controls.Add(this.bookNewButton);
+            this.customerFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.customerFlowLayoutPanel.Location = new System.Drawing.Point(0, 240);
+            this.customerFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.customerFlowLayoutPanel.Name = "customerFlowLayoutPanel";
+            this.customerFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
+            this.customerFlowLayoutPanel.Size = new System.Drawing.Size(210, 102);
+            this.customerFlowLayoutPanel.TabIndex = 1;
             // 
             // currentBookingsButton
             // 
@@ -161,6 +166,7 @@
             this.currentBookingsButton.Tag = "currentBookings";
             this.currentBookingsButton.Text = "Trenutne rezervacije";
             this.currentBookingsButton.UseVisualStyleBackColor = false;
+            this.currentBookingsButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // bookNewButton
             // 
@@ -174,6 +180,7 @@
             this.bookNewButton.Tag = "bookNew";
             this.bookNewButton.Text = "Rezerviši novi automobil";
             this.bookNewButton.UseVisualStyleBackColor = false;
+            this.bookNewButton.Click += new System.EventHandler(this.Button_Click);
             // 
             // logoutButton
             // 
@@ -188,6 +195,7 @@
             this.logoutButton.Tag = "logout";
             this.logoutButton.Text = "Odjavi se";
             this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // UCSideMenu
             // 

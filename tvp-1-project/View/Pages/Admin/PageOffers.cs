@@ -29,7 +29,7 @@ namespace tvp_1_project.View.Pages.Admin
 
             // Hide 'Id' and 'Display' columns
             ucDataViewer.DataGridView.Columns["Id"].Visible = false;
-            ucDataViewer.DataGridView.Columns["Bookings"].Visible = false;
+            //ucDataViewer.DataGridView.Columns["Bookings"].Visible = false;
             ucDataViewer.DataGridView.Columns["Display"].Visible = false;
         }
 

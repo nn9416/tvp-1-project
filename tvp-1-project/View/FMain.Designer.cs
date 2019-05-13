@@ -89,6 +89,7 @@
             // pagesPanel
             // 
             this.pagesPanel.Location = new System.Drawing.Point(214, 30);
+            this.pagesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pagesPanel.Name = "pagesPanel";
             this.pagesPanel.Size = new System.Drawing.Size(900, 590);
             this.pagesPanel.TabIndex = 3;
@@ -128,9 +129,11 @@
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1118, 624);
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMain";
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseUp);

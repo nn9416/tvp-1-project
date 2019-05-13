@@ -11,6 +11,7 @@ namespace tvp_1_project.View.Pages.Admin
     public partial class PageCars : UserControl, ICarsView
     {
         public event EventHandler<CustomEventArgs> CrudButtonClick;
+
         public PageCars()
         {
             InitializeComponent();

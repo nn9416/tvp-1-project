@@ -124,9 +124,6 @@ namespace tvp_1_project.View.Pages.Admin
             OffersDataGridView.DataSource = data;
             OffersDataGridView.ClearSelection();
 
-            // DataGridViewOffers style
-            OffersDataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
-            OffersDataGridView.DefaultCellStyle.SelectionForeColor = Color.FromArgb(22, 57, 98);
             OffersDataGridView.Columns["Id"].Visible = false;
             OffersDataGridView.Columns["Display"].Visible = false;
 

@@ -23,6 +23,7 @@ namespace tvp_1_project.View
         public void SetViewState(bool isAdmin)
         {
             ucSideMenu.HideButtons(isAdmin);
+            ucSideMenu.ButtonClick += UcSideMenu_ButtonClick;
 
             Pages = new Dictionary<string, UserControl>() {
                 { "cars", CarsPage },
@@ -55,6 +56,12 @@ namespace tvp_1_project.View
         #endregion
 
         #region Events
+        private void FMain_Load(object sender, EventArgs e)
+        {
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+
         private void UcSideMenu_ButtonClick(object sender, EventArgs e)
         {
             string pageName = ((Button)sender).Tag.ToString();
@@ -69,7 +76,7 @@ namespace tvp_1_project.View
         private void FMain_Resize(object sender, EventArgs e)
         {
             ResponsiveLayout.ChangeWidth(pagesPanel, ClientSize.Width, ucSideMenu.Width + 8);
-            ResponsiveLayout.ChangeHeight(pagesPanel, ClientSize.Height, 37);
+            ResponsiveLayout.ChangeHeight(pagesPanel, ClientSize.Height, 34);
             ResponsiveLayout.ChangeHeight(ucSideMenu, pagesPanel.Height);
 
             if (this.WindowState == FormWindowState.Maximized)
@@ -176,6 +183,7 @@ namespace tvp_1_project.View
         private PageCustomers CustomersPage { get; set; } = new PageCustomers();
         private PageOffers OffersPage { get; set; } = new PageOffers();
         private PageBookings BookingsPage { get; set; } = new PageBookings();
+        
         // TODO: Uncomment when features are merged to development branch
         //private PageStatistics StatisticsPage { get; set; } = new PageStatistics();
         //private PageCurrentBookings CurrentBookingsPage { get; set; } = new PageCurrentBookings();
