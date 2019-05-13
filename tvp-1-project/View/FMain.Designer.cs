@@ -28,27 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucSideMenu = new tvp_1_project.View.UserControls.UCSideMenu();
             this.windowButtonsflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.closeLabel = new System.Windows.Forms.Label();
             this.maximizeLabel = new System.Windows.Forms.Label();
             this.minimizeLabel = new System.Windows.Forms.Label();
             this.pagesPanel = new System.Windows.Forms.Panel();
             this.currentUserLabel = new System.Windows.Forms.Label();
+            this.ucSideMenu = new tvp_1_project.View.UserControls.UCSideMenu();
             this.windowButtonsflowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ucSideMenu
-            // 
-            this.ucSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
-            this.ucSideMenu.Font = new System.Drawing.Font("Consolas", 8.25F);
-            this.ucSideMenu.ForeColor = System.Drawing.Color.White;
-            this.ucSideMenu.Location = new System.Drawing.Point(4, 30);
-            this.ucSideMenu.MinimumSize = new System.Drawing.Size(210, 590);
-            this.ucSideMenu.Name = "ucSideMenu";
-            this.ucSideMenu.Size = new System.Drawing.Size(210, 590);
-            this.ucSideMenu.TabIndex = 0;
-            this.ucSideMenu.ButtonClick += new System.EventHandler(this.UcSideMenu_ButtonClick);
             // 
             // windowButtonsflowLayoutPanel
             // 
@@ -115,6 +103,18 @@
             this.currentUserLabel.TabIndex = 4;
             this.currentUserLabel.Text = "currentUserLlabel";
             // 
+            // ucSideMenu
+            // 
+            this.ucSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
+            this.ucSideMenu.Font = new System.Drawing.Font("Consolas", 8.25F);
+            this.ucSideMenu.ForeColor = System.Drawing.Color.White;
+            this.ucSideMenu.Location = new System.Drawing.Point(4, 30);
+            this.ucSideMenu.MinimumSize = new System.Drawing.Size(210, 590);
+            this.ucSideMenu.Name = "ucSideMenu";
+            this.ucSideMenu.Size = new System.Drawing.Size(210, 590);
+            this.ucSideMenu.TabIndex = 0;
+            this.ucSideMenu.ButtonClick += new System.EventHandler(this.UcSideMenu_ButtonClick);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +131,9 @@
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMain";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FMain_MouseUp);
             this.Resize += new System.EventHandler(this.FMain_Resize);
             this.windowButtonsflowLayoutPanel.ResumeLayout(false);
             this.windowButtonsflowLayoutPanel.PerformLayout();
