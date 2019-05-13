@@ -45,6 +45,8 @@
             this.ucDataViewer.Name = "ucDataViewer";
             this.ucDataViewer.Size = new System.Drawing.Size(900, 590);
             this.ucDataViewer.TabIndex = 0;
+            this.ucDataViewer.ButtonClick += new System.EventHandler<tvp_1_project.BussinesLogic.CustomEventArgs>(this.UcDataViewerButtons_Click);
+            this.ucDataViewer.Load += new System.EventHandler(this.UcDataViewer_Load);
             // 
             // offersDataGridView
             // 

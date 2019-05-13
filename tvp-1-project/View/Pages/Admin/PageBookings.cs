@@ -11,8 +11,6 @@ namespace tvp_1_project.View.Pages.Admin
 {
     public partial class PageBookings : UserControl, IBookingsView
     {
-        public PBookings Presenter { get; set; }
-
         public event EventHandler<CustomEventArgs> CrudButtonClick;
 
         public PageBookings()
@@ -48,6 +46,8 @@ namespace tvp_1_project.View.Pages.Admin
             SelectCar.ComboBox.DisplayMember = "Display";
             SelectCar.ComboBox.ValueMember = "Id";
         }
+
+        public PBookings Presenter { get; set; }
         #endregion
 
         #region Events
@@ -92,7 +92,7 @@ namespace tvp_1_project.View.Pages.Admin
             PopulateDataGridViewOffers(Presenter.GetOffersForCar(SelectCar.ComboBox.SelectedItem as Car));
             OffersDataGridView.Enabled = false;
         }
-        #endregion
+        #endregion 
 
         private List<Control> GenerateInputControls()
         {
@@ -118,7 +118,7 @@ namespace tvp_1_project.View.Pages.Admin
             };
         }
 
-        public void PopulateDataGridViewOffers(List<Offer> data)
+        private void PopulateDataGridViewOffers(List<Offer> data)
         {
             OffersDataGridView.DataSource = data;
             OffersDataGridView.ClearSelection();
@@ -136,10 +136,10 @@ namespace tvp_1_project.View.Pages.Admin
         }
         
         private DataGridView OffersDataGridView { get => offersDataGridView; }
-        public UCSelectInput SelectCustomer { get; set; }
-        public UCSelectInput SelectCar { get; set; }
-        public UCDateSelect DateFrom { get; set; }
-        public UCDateSelect DateTo { get; set; }
-        public UCTextInput Price { get; set; }        
+        private UCSelectInput SelectCustomer { get; set; }
+        private UCSelectInput SelectCar { get; set; }
+        private UCDateSelect DateFrom { get; set; }
+        private UCDateSelect DateTo { get; set; }
+        private UCTextInput Price { get; set; }        
     }
 }
