@@ -68,6 +68,7 @@
     <Compile Include="Presenter\Pages\Admin\PCars.cs" />
     <Compile Include="Presenter\Pages\Admin\PCustomers.cs" />
     <Compile Include="Presenter\Pages\Admin\POffers.cs" />
+    <Compile Include="Presenter\Pages\Admin\PStatistics.cs" />
     <Compile Include="Presenter\PLogin.cs" />
     <Compile Include="Presenter\PRegistration.cs" />
     <Compile Include="Program.cs" />
