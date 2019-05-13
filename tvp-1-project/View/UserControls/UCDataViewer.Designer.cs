@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.crudSplitContainer = new System.Windows.Forms.SplitContainer();
@@ -58,6 +58,7 @@
             this.mainSplitContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
             this.mainSplitContainer.IsSplitterFixed = true;
             this.mainSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.mainSplitContainer.Margin = new System.Windows.Forms.Padding(0);
             this.mainSplitContainer.Name = "mainSplitContainer";
             this.mainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -89,29 +90,32 @@
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(900, 374);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.DataGridView_SelectionChanged);
             // 
             // crudSplitContainer
             // 
             this.crudSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
             this.crudSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crudSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.crudSplitContainer.Location = new System.Drawing.Point(0, 5);
             this.crudSplitContainer.MinimumSize = new System.Drawing.Size(885, 210);
             this.crudSplitContainer.Name = "crudSplitContainer";
@@ -132,6 +136,7 @@
             // 
             this.inputControlsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputControlsFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.inputControlsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.inputControlsFlowLayoutPanel.Name = "inputControlsFlowLayoutPanel";
             this.inputControlsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.inputControlsFlowLayoutPanel.Size = new System.Drawing.Size(691, 210);
@@ -139,11 +144,11 @@
             // 
             // buttonsFlowLayoutPanel
             // 
+            this.buttonsFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonsFlowLayoutPanel.Controls.Add(this.updateButton);
             this.buttonsFlowLayoutPanel.Controls.Add(this.cancelButton);
             this.buttonsFlowLayoutPanel.Controls.Add(this.addNewButton);
             this.buttonsFlowLayoutPanel.Controls.Add(this.deleteButton);
-            this.buttonsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.buttonsFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.buttonsFlowLayoutPanel.Name = "buttonsFlowLayoutPanel";
@@ -178,6 +183,7 @@
             this.cancelButton.Tag = "Cancel";
             this.cancelButton.Text = "Otkaži izmene";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // addNewButton
             // 
@@ -215,6 +221,7 @@
             this.Controls.Add(this.mainSplitContainer);
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGray;
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(900, 590);
             this.Name = "UCDataViewer";
             this.Size = new System.Drawing.Size(900, 590);

@@ -69,6 +69,7 @@
     <Compile Include="Presenter\Pages\Admin\PCustomers.cs" />
     <Compile Include="Presenter\Pages\Admin\POffers.cs" />
     <Compile Include="Presenter\PLogin.cs" />
+    <Compile Include="Presenter\PMain.cs" />
     <Compile Include="Presenter\PRegistration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +79,12 @@
     <Compile Include="View\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +92,7 @@
       <DependentUpon>FRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ILoginView.cs" />
+    <Compile Include="View\IMainView.cs" />
     <Compile Include="View\IRegistrationView.cs" />
     <Compile Include="View\Pages\Admin\IBookingsView.cs" />
     <Compile Include="View\Pages\Admin\ICarsView.cs" />
@@ -156,6 +164,9 @@
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FRegistration.resx">
       <DependentUpon>FRegistration.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,7 +212,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Resources\carRepo.xml" />
+    <EmbeddedResource Include="Resources\carRepo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -34,10 +34,12 @@
             // ucDataViewer
             // 
             this.ucDataViewer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.ucDataViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucDataViewer.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ucDataViewer.ForeColor = System.Drawing.Color.LightGray;
             this.ucDataViewer.InputControls = null;
             this.ucDataViewer.Location = new System.Drawing.Point(0, 0);
+            this.ucDataViewer.Margin = new System.Windows.Forms.Padding(0);
             this.ucDataViewer.MinimumSize = new System.Drawing.Size(900, 590);
             this.ucDataViewer.Name = "ucDataViewer";
             this.ucDataViewer.Size = new System.Drawing.Size(900, 590);
@@ -53,6 +55,7 @@
             this.Controls.Add(this.ucDataViewer);
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(900, 590);
             this.Name = "PageCars";
             this.Size = new System.Drawing.Size(900, 590);

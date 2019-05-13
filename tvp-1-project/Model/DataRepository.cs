@@ -19,7 +19,7 @@ namespace tvp_1_project.Model
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Records));
 
-            using (Stream stream = this.GetType().Assembly.
+            using (Stream stream = GetType().Assembly.
                GetManifestResourceStream("tvp_1_project.Resources.carRepo.xml"))
                 return (Records)serializer.Deserialize(stream);
         }

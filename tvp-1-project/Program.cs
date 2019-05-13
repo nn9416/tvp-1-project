@@ -20,10 +20,10 @@ namespace tvp_1_project
 
             if (loginView.ShowDialog() == DialogResult.OK)
             {
-                //var mainView = new View.FMain();
-                //var mainRepository = new Model.DataRepository();
-                //var mainPresenter = new Presenter.PMain(mainView, mainRepository);
-                //Application.Run(mainView);
+                var mainView = new View.FMain();
+                var mainRepository = new Model.DataRepository();
+                var mainPresenter = new Presenter.PMain(mainView, mainRepository);
+                Application.Run(mainView);
             }
         }
     }

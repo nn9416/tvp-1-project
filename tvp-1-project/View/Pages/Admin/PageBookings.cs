@@ -71,15 +71,16 @@ namespace tvp_1_project.View.Pages.Admin
                 {"DateTo", DateTo.DateTimePicker.Value.Date.ToString("dd.MM.yyyy.") },
             };
 
-            if (Presenter.TryCreateNew(values))
-            {
-                CrudButtonClick?.Invoke(sender, e);
-                Presenter.UpdateData();
-            }
-            else
-            {
-                // TODO: Notify user that input is wrong
-            }
+            // TODO: Uncomment when validation for bookings is implemented
+            //if (Presenter.TryCreateNew(values))
+            //{
+            //    CrudButtonClick?.Invoke(sender, e);
+            //    Presenter.UpdateData();
+            //}
+            //else
+            //{
+            //    // TODO: Notify user that input is wrong
+            //}
         }
 
         private void CustomerComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,9 +124,6 @@ namespace tvp_1_project.View.Pages.Admin
             OffersDataGridView.DataSource = data;
             OffersDataGridView.ClearSelection();
 
-            // DataGridViewOffers style
-            OffersDataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
-            OffersDataGridView.DefaultCellStyle.SelectionForeColor = Color.FromArgb(22, 57, 98);
             OffersDataGridView.Columns["Id"].Visible = false;
             OffersDataGridView.Columns["Display"].Visible = false;
 

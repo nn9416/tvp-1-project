@@ -1,10 +1,11 @@
 ﻿using System;
+using tvp_1_project.Presenter;
 
 namespace tvp_1_project.View
 {
     public interface IRegistrationView
     {
-        Presenter.PRegistration Presenter { get; set; }
+        PRegistration Presenter { get; set; }
         string FirstName { get; }
         string LastName { get; }
         string Ssn { get; }

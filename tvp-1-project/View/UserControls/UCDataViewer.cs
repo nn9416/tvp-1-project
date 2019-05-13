@@ -20,21 +20,20 @@ namespace tvp_1_project.View.UserControls
 
         public UCDataViewer()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            AddButtonEvents();
+            isAddNewMode = false;
         }
 
         #region Events
         private void UCDataViewer_Load(object sender, EventArgs e)
         {
             LoadDataView?.Invoke(sender, e);
-            AddButtonEvents();
+            
             if (DataGridView.Rows.Count == 0)
             {
                 isAddNewMode = true;
                 ToggleAddNewMode(isAddNewMode);
-            } else
-            {
-                isAddNewMode = false;
             }
         }
 
@@ -116,7 +115,7 @@ namespace tvp_1_project.View.UserControls
 
         internal void AddButtonEvents()
         {
-            foreach (Button button in inputControlsFlowLayoutPanel.Controls.OfType<Button>())
+            foreach (Button button in buttonsFlowLayoutPanel.Controls.OfType<Button>())
             {
                 if (!button.Tag.ToString().Equals("Cancel"))
                     button.Click += (sender, e) => Button_Click(sender, e as CustomEventArgs);
@@ -129,16 +128,16 @@ namespace tvp_1_project.View.UserControls
             {
                 addNewButton.Enabled = deleteButton.Enabled = false;
                 updateButton.Tag = "Create";
-                dataGridView.ClearSelection();
+                DataGridView.ClearSelection();
                 ClearInputControls();
-                dataGridView.Enabled = false;
+                DataGridView.Enabled = false;
                 mainSplitContainer.Panel2.BackColor = Color.FromArgb(8, 93, 251);
             }
             else
             {
                 addNewButton.Enabled = deleteButton.Enabled = true;
                 updateButton.Tag = "Update";
-                dataGridView.Enabled = true;
+                DataGridView.Enabled = true;
                 mainSplitContainer.Panel2.BackColor = Color.FromArgb(93, 251, 8);
             }
         }

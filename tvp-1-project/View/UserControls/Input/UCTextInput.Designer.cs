@@ -47,6 +47,7 @@
             // 
             this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox.ForeColor = System.Drawing.Color.White;
             this.textBox.Location = new System.Drawing.Point(15, 19);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(180, 13);
