@@ -9,7 +9,6 @@ namespace tvp_1_project.View.UserControls.Input
         {
             InitializeComponent();
             DateTimePicker.CustomFormat = "dd.MM.yyyy.";
-            DateTimePicker.MinDate = DateTime.Today;
         }
         
         public string LabelText { get => label.Text; set => label.Text = value; }

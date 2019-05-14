@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.dataSearchSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.searchFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.searchCategoryLabel = new System.Windows.Forms.Label();
+            this.searchCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.searchValueLabel = new System.Windows.Forms.Label();
+            this.searchValueTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.crudSplitContainer = new System.Windows.Forms.SplitContainer();
             this.inputControlsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,6 +49,11 @@
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearchSplitContainer)).BeginInit();
+            this.dataSearchSplitContainer.Panel1.SuspendLayout();
+            this.dataSearchSplitContainer.Panel2.SuspendLayout();
+            this.dataSearchSplitContainer.SuspendLayout();
+            this.searchFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crudSplitContainer)).BeginInit();
             this.crudSplitContainer.Panel1.SuspendLayout();
@@ -52,7 +64,7 @@
             // 
             // mainSplitContainer
             // 
-            this.mainSplitContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.mainSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.mainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.mainSplitContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
@@ -64,18 +76,96 @@
             // 
             // mainSplitContainer.Panel1
             // 
-            this.mainSplitContainer.Panel1.Controls.Add(this.dataGridView);
+            this.mainSplitContainer.Panel1.Controls.Add(this.dataSearchSplitContainer);
             // 
             // mainSplitContainer.Panel2
             // 
-            this.mainSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(251)))), ((int)(((byte)(8)))));
+            this.mainSplitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(202)))), ((int)(((byte)(120)))));
             this.mainSplitContainer.Panel2.Controls.Add(this.crudSplitContainer);
-            this.mainSplitContainer.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mainSplitContainer.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.mainSplitContainer.Panel2MinSize = 215;
             this.mainSplitContainer.Size = new System.Drawing.Size(900, 590);
             this.mainSplitContainer.SplitterDistance = 374;
             this.mainSplitContainer.SplitterWidth = 1;
             this.mainSplitContainer.TabIndex = 0;
+            // 
+            // dataSearchSplitContainer
+            // 
+            this.dataSearchSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.dataSearchSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataSearchSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.dataSearchSplitContainer.IsSplitterFixed = true;
+            this.dataSearchSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.dataSearchSplitContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.dataSearchSplitContainer.Name = "dataSearchSplitContainer";
+            this.dataSearchSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // dataSearchSplitContainer.Panel1
+            // 
+            this.dataSearchSplitContainer.Panel1.Controls.Add(this.searchFlowLayoutPanel);
+            // 
+            // dataSearchSplitContainer.Panel2
+            // 
+            this.dataSearchSplitContainer.Panel2.Controls.Add(this.dataGridView);
+            this.dataSearchSplitContainer.Size = new System.Drawing.Size(900, 374);
+            this.dataSearchSplitContainer.SplitterDistance = 25;
+            this.dataSearchSplitContainer.SplitterWidth = 1;
+            this.dataSearchSplitContainer.TabIndex = 1;
+            // 
+            // searchFlowLayoutPanel
+            // 
+            this.searchFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            this.searchFlowLayoutPanel.Controls.Add(this.searchCategoryLabel);
+            this.searchFlowLayoutPanel.Controls.Add(this.searchCategoryComboBox);
+            this.searchFlowLayoutPanel.Controls.Add(this.searchValueLabel);
+            this.searchFlowLayoutPanel.Controls.Add(this.searchValueTextBox);
+            this.searchFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchFlowLayoutPanel.ForeColor = System.Drawing.Color.White;
+            this.searchFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.searchFlowLayoutPanel.Name = "searchFlowLayoutPanel";
+            this.searchFlowLayoutPanel.Size = new System.Drawing.Size(900, 25);
+            this.searchFlowLayoutPanel.TabIndex = 1;
+            // 
+            // searchCategoryLabel
+            // 
+            this.searchCategoryLabel.AutoSize = true;
+            this.searchCategoryLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold);
+            this.searchCategoryLabel.Location = new System.Drawing.Point(3, 6);
+            this.searchCategoryLabel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.searchCategoryLabel.Name = "searchCategoryLabel";
+            this.searchCategoryLabel.Size = new System.Drawing.Size(97, 13);
+            this.searchCategoryLabel.TabIndex = 0;
+            this.searchCategoryLabel.Text = "Pretraga prema:";
+            // 
+            // searchCategoryComboBox
+            // 
+            this.searchCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchCategoryComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchCategoryComboBox.FormattingEnabled = true;
+            this.searchCategoryComboBox.Location = new System.Drawing.Point(106, 2);
+            this.searchCategoryComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchCategoryComboBox.Name = "searchCategoryComboBox";
+            this.searchCategoryComboBox.Size = new System.Drawing.Size(190, 21);
+            this.searchCategoryComboBox.TabIndex = 1;
+            // 
+            // searchValueLabel
+            // 
+            this.searchValueLabel.AutoSize = true;
+            this.searchValueLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold);
+            this.searchValueLabel.Location = new System.Drawing.Point(302, 6);
+            this.searchValueLabel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.searchValueLabel.Name = "searchValueLabel";
+            this.searchValueLabel.Size = new System.Drawing.Size(61, 13);
+            this.searchValueLabel.TabIndex = 2;
+            this.searchValueLabel.Text = "Vrednost:";
+            // 
+            // searchValueTextBox
+            // 
+            this.searchValueTextBox.Location = new System.Drawing.Point(369, 3);
+            this.searchValueTextBox.Name = "searchValueTextBox";
+            this.searchValueTextBox.Size = new System.Drawing.Size(190, 20);
+            this.searchValueTextBox.TabIndex = 3;
             // 
             // dataGridView
             // 
@@ -83,40 +173,51 @@
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(181)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.EnableHeadersVisualStyles = false;
+            this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(900, 374);
+            this.dataGridView.Size = new System.Drawing.Size(900, 348);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.DataGridView_SelectionChanged);
             // 
             // crudSplitContainer
             // 
-            this.crudSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.crudSplitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.crudSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crudSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.crudSplitContainer.Location = new System.Drawing.Point(0, 5);
+            this.crudSplitContainer.ForeColor = System.Drawing.Color.White;
+            this.crudSplitContainer.Location = new System.Drawing.Point(0, 3);
             this.crudSplitContainer.MinimumSize = new System.Drawing.Size(885, 210);
             this.crudSplitContainer.Name = "crudSplitContainer";
             // 
@@ -128,23 +229,26 @@
             // crudSplitContainer.Panel2
             // 
             this.crudSplitContainer.Panel2.Controls.Add(this.buttonsFlowLayoutPanel);
-            this.crudSplitContainer.Size = new System.Drawing.Size(900, 210);
+            this.crudSplitContainer.Size = new System.Drawing.Size(900, 212);
             this.crudSplitContainer.SplitterDistance = 691;
             this.crudSplitContainer.TabIndex = 0;
             // 
             // inputControlsFlowLayoutPanel
             // 
+            this.inputControlsFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.inputControlsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputControlsFlowLayoutPanel.ForeColor = System.Drawing.Color.White;
             this.inputControlsFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.inputControlsFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.inputControlsFlowLayoutPanel.Name = "inputControlsFlowLayoutPanel";
             this.inputControlsFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.inputControlsFlowLayoutPanel.Size = new System.Drawing.Size(691, 210);
+            this.inputControlsFlowLayoutPanel.Size = new System.Drawing.Size(691, 212);
             this.inputControlsFlowLayoutPanel.TabIndex = 0;
             // 
             // buttonsFlowLayoutPanel
             // 
             this.buttonsFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonsFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.buttonsFlowLayoutPanel.Controls.Add(this.updateButton);
             this.buttonsFlowLayoutPanel.Controls.Add(this.cancelButton);
             this.buttonsFlowLayoutPanel.Controls.Add(this.addNewButton);
@@ -158,7 +262,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.updateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.updateButton.ForeColor = System.Drawing.Color.White;
@@ -172,7 +276,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.cancelButton.ForeColor = System.Drawing.Color.White;
@@ -187,7 +291,7 @@
             // 
             // addNewButton
             // 
-            this.addNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.addNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.addNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.addNewButton.ForeColor = System.Drawing.Color.White;
@@ -201,7 +305,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.deleteButton.ForeColor = System.Drawing.Color.White;
@@ -217,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.Controls.Add(this.mainSplitContainer);
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGray;
@@ -230,6 +334,12 @@
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
+            this.dataSearchSplitContainer.Panel1.ResumeLayout(false);
+            this.dataSearchSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSearchSplitContainer)).EndInit();
+            this.dataSearchSplitContainer.ResumeLayout(false);
+            this.searchFlowLayoutPanel.ResumeLayout(false);
+            this.searchFlowLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.crudSplitContainer.Panel1.ResumeLayout(false);
             this.crudSplitContainer.Panel2.ResumeLayout(false);
@@ -251,5 +361,11 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button addNewButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.SplitContainer dataSearchSplitContainer;
+        private System.Windows.Forms.FlowLayoutPanel searchFlowLayoutPanel;
+        private System.Windows.Forms.Label searchCategoryLabel;
+        public System.Windows.Forms.ComboBox searchCategoryComboBox;
+        private System.Windows.Forms.Label searchValueLabel;
+        private System.Windows.Forms.TextBox searchValueTextBox;
     }
 }

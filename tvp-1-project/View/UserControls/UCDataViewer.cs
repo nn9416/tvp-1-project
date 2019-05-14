@@ -34,7 +34,7 @@ namespace tvp_1_project.View.UserControls
             {
                 isAddNewMode = true;
                 ToggleAddNewMode(isAddNewMode);
-            }
+            }            
         }
 
         private void DataGridView_SelectionChanged(object sender, EventArgs e)
@@ -109,6 +109,26 @@ namespace tvp_1_project.View.UserControls
                 ClearInputControls();
             }
         }
+
+        private void SearchValueTextBox_TextChanged(object sender, EventArgs e)
+        {
+            DataGridViewTextBoxColumn temp = searchCategoryComboBox.SelectedValue as DataGridViewTextBoxColumn;
+            try
+            {
+                foreach (DataGridViewRow row in DataGridView.Rows)
+                {
+                    if (row.Cells[$"{temp.Name}"].Value.ToString().ToLower().Contains(searchValueTextBox.Text.ToLower()))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
         #endregion
 
         internal void PopulateInputControlsFlowLayoutPanel() => InputControlsFlowLayoutPanel.Controls.AddRange(InputControls.ToArray());
@@ -128,17 +148,19 @@ namespace tvp_1_project.View.UserControls
             {
                 addNewButton.Enabled = deleteButton.Enabled = false;
                 updateButton.Tag = "Create";
-                DataGridView.ClearSelection();
+                DataGridView.ClearSelection();                
                 ClearInputControls();
                 DataGridView.Enabled = false;
-                mainSplitContainer.Panel2.BackColor = Color.FromArgb(8, 93, 251);
+                dataSearchSplitContainer.Panel1Collapsed = true;
+                mainSplitContainer.Panel2.BackColor = Color.FromArgb(97, 175, 239);
             }
             else
             {
                 addNewButton.Enabled = deleteButton.Enabled = true;
                 updateButton.Tag = "Update";
                 DataGridView.Enabled = true;
-                mainSplitContainer.Panel2.BackColor = Color.FromArgb(93, 251, 8);
+                dataSearchSplitContainer.Panel1Collapsed = false;
+                mainSplitContainer.Panel2.BackColor = Color.FromArgb(137, 202, 120);
             }
         }
 
@@ -229,8 +251,27 @@ namespace tvp_1_project.View.UserControls
             }
         }
 
+        public void SetSearchCategoriesComboBox()
+        {
+            DataGridViewColumn[] arrayOfColumns = new DataGridViewColumn[DataGridView.Columns.Count];
+            List<DataGridViewColumn> listOfColumns = new List<DataGridViewColumn>();
+            DataGridView.Columns.CopyTo(arrayOfColumns, 0);
+
+            foreach (DataGridViewColumn column in arrayOfColumns)
+            {
+                if (column.HeaderText != "Id" && column.HeaderText != "Display" && column.HeaderText != "Lozinka")
+                    listOfColumns.Add(column);
+            }
+
+            SearchCategoryComboBox.DisplayMember = "HeaderText";
+            SearchCategoryComboBox.ValueMember = "Name";
+            SearchCategoryComboBox.DataSource = listOfColumns;
+        }        
+
         public DataGridView DataGridView { get => dataGridView; }
+        public ComboBox SearchCategoryComboBox { get => searchCategoryComboBox; }
+        public TextBox SearchValueTextBox { get => searchValueTextBox; }
         public FlowLayoutPanel InputControlsFlowLayoutPanel { get => inputControlsFlowLayoutPanel; }
-        public List<Control> InputControls { get; set; }
+        public List<Control> InputControls { get; set; }                
     }
 }

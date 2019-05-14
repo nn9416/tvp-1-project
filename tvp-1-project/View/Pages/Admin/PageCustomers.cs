@@ -46,6 +46,7 @@ namespace tvp_1_project.View.Pages.Admin
             ucDataViewer.DataGridView.Columns["PhoneNumber"].HeaderText = "Broj telefona";
             ucDataViewer.DataGridView.Columns["Username"].HeaderText = "Korisničko ime";
             ucDataViewer.DataGridView.Columns["Password"].HeaderText = "Lozinka";
+            ucDataViewer.SetSearchCategoriesComboBox();
         }
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
@@ -92,6 +93,16 @@ namespace tvp_1_project.View.Pages.Admin
                 Username,
                 Password
             };
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
 
         private UCTextInput FirstName { get; set; }

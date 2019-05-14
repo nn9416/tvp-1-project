@@ -66,7 +66,7 @@
             // 
             // usernameUcTextInput
             // 
-            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.usernameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.usernameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.usernameUcTextInput.LabelText = "Korisničko ime:";
@@ -77,7 +77,7 @@
             // 
             // passwordUcTextInput
             // 
-            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.passwordUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.passwordUcTextInput.ForeColor = System.Drawing.Color.White;
             this.passwordUcTextInput.LabelText = "Lozinka:";
@@ -85,10 +85,11 @@
             this.passwordUcTextInput.Name = "passwordUcTextInput";
             this.passwordUcTextInput.Size = new System.Drawing.Size(210, 45);
             this.passwordUcTextInput.TabIndex = 1;
+            this.passwordUcTextInput.Load += new System.EventHandler(this.PasswordUcTextInput_Load);
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.loginButton.Location = new System.Drawing.Point(10, 105);
@@ -102,7 +103,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(10, 141);
@@ -118,19 +119,21 @@
             // 
             this.closeLabel.AutoSize = true;
             this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLabel.Location = new System.Drawing.Point(358, 9);
+            this.closeLabel.Font = new System.Drawing.Font("Operator Mono Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.closeLabel.Location = new System.Drawing.Point(354, 8);
             this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(14, 15);
+            this.closeLabel.Size = new System.Drawing.Size(18, 19);
             this.closeLabel.TabIndex = 1;
             this.closeLabel.Text = "X";
             this.closeLabel.Click += new System.EventHandler(this.CloseLabel_Click);
+            this.closeLabel.MouseEnter += new System.EventHandler(this.CloseLabel_MouseEnter);
+            this.closeLabel.MouseLeave += new System.EventHandler(this.CloseLabel_MouseLeave);
             // 
             // FLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(96)))), ((int)(((byte)(164)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(384, 220);
             this.ControlBox = false;
             this.Controls.Add(this.closeLabel);

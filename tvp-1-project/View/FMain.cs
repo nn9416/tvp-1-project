@@ -36,7 +36,14 @@ namespace tvp_1_project.View
             };
 
             string currentUserUsername = Authentication.CurrentUser;
-            currentUserLabel.Text = $"Trenutno ste prijavljeni kao {currentUserUsername}";
+            if (currentUserUsername.Equals("admin"))
+            {
+                currentUserLabel.Text = $"Admin Panel - Rent a Car";
+            } else
+            {
+                currentUserLabel.Text = $"{currentUserUsername} - Rent a Car";
+            }
+            
 
             CarsPage.CrudButtonClick += UcDataView_CrudButtonClick;
             CustomersPage.CrudButtonClick += UcDataView_CrudButtonClick;
@@ -89,9 +96,19 @@ namespace tvp_1_project.View
             }
         }
 
-        private void MinimizLabele_Click(object sender, EventArgs e)
+        private void MinimizeLabel_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void MinimizeLabel_MouseEnter(object sender, EventArgs e)
+        {
+            minimizeLabel.ForeColor = Color.FromArgb(137, 202, 120);
+        }
+
+        private void MinimizeLabel_MouseLeave(object sender, EventArgs e)
+        {
+            minimizeLabel.ForeColor = Color.White;
         }
 
         private void MaximizeLabel_Click(object sender, EventArgs e)
@@ -106,9 +123,29 @@ namespace tvp_1_project.View
             }
         }
 
+        private void MaximizeLabel_MouseEnter(object sender, EventArgs e)
+        {
+            maximizeLabel.ForeColor = Color.FromArgb(97, 175, 239);
+        }
+
+        private void MaximizeLabel_MouseLeave(object sender, EventArgs e)
+        {
+            maximizeLabel.ForeColor = Color.White;
+        }
+
         private void CloseLabel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CloseLabel_MouseEnter(object sender, EventArgs e)
+        {
+            closeLabel.ForeColor = Color.FromArgb(239, 89, 111);
+        }
+
+        private void CloseLabel_MouseLeave(object sender, EventArgs e)
+        {
+            closeLabel.ForeColor = Color.White;
         }
         #endregion
         #region Move form without borders
@@ -182,8 +219,7 @@ namespace tvp_1_project.View
         private PageCars CarsPage { get; set; } = new PageCars();
         private PageCustomers CustomersPage { get; set; } = new PageCustomers();
         private PageOffers OffersPage { get; set; } = new PageOffers();
-        private PageBookings BookingsPage { get; set; } = new PageBookings();
-        
+        private PageBookings BookingsPage { get; set; } = new PageBookings();        
         // TODO: Uncomment when features are merged to development branch
         //private PageStatistics StatisticsPage { get; set; } = new PageStatistics();
         //private PageCurrentBookings CurrentBookingsPage { get; set; } = new PageCurrentBookings();

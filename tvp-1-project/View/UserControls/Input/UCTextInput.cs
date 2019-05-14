@@ -12,7 +12,7 @@ namespace tvp_1_project.View.UserControls.Input
 
         private void TextBox_Enter(object sender, System.EventArgs e) => underLine.BackColor = Color.White;
 
-        private void TextBox_Leave(object sender, System.EventArgs e) => underLine.BackColor = Color.LightGray;
+        private void TextBox_Leave(object sender, System.EventArgs e) => underLine.BackColor = Color.DarkGray;
 
         public string LabelText { get => label.Text; set => label.Text = value; }
         public TextBox TextBox { get => textBox; }        

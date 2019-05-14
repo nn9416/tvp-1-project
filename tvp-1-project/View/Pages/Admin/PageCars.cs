@@ -25,11 +25,7 @@ namespace tvp_1_project.View.Pages.Admin
             UpdateDataViewer(data);
             ucDataViewer.InputControls = GenerateInputControls();
             ucDataViewer.PopulateInputControlsFlowLayoutPanel();
-            ucDataViewer.UpdateInputControls();
-
-            // Hide 'Id' and 'Display' columns
-            ucDataViewer.DataGridView.Columns["Id"].Visible = false;
-            ucDataViewer.DataGridView.Columns["Display"].Visible = false;
+            ucDataViewer.UpdateInputControls();            
         }
 
         public void UpdateDataViewer(List<Car> data)
@@ -42,6 +38,11 @@ namespace tvp_1_project.View.Pages.Admin
         private void UcDataViewer_Load(object sender, EventArgs e)
         {
             Presenter.GetCars();
+            
+            // Hide 'Id' and 'Display' columns         
+            ucDataViewer.DataGridView.Columns["Id"].Visible = false;
+            ucDataViewer.DataGridView.Columns["Display"].Visible = false;
+
             ucDataViewer.DataGridView.Columns["ProductionYear"].HeaderText = "Godina proizvodnje";
             ucDataViewer.DataGridView.Columns["Make"].HeaderText = "Proizvođač";
             ucDataViewer.DataGridView.Columns["Displacement"].HeaderText = "Kubikaža";
@@ -50,6 +51,7 @@ namespace tvp_1_project.View.Pages.Admin
             ucDataViewer.DataGridView.Columns["Transmission"].HeaderText = "Menjač";
             ucDataViewer.DataGridView.Columns["Body"].HeaderText = "Karoserija";
             ucDataViewer.DataGridView.Columns["NumberOfDoors"].HeaderText = "Broj vrata";
+            ucDataViewer.SetSearchCategoriesComboBox();
         }
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
@@ -108,6 +110,16 @@ namespace tvp_1_project.View.Pages.Admin
                 SelectBody,
                 SelectNumberOfDoors
             };
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
 
         private UCSelectInput SelectYear { get; set; }

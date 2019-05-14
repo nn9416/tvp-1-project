@@ -61,6 +61,8 @@
             this.closeLabel.TabIndex = 0;
             this.closeLabel.Text = "X";
             this.closeLabel.Click += new System.EventHandler(this.CloseLabel_Click);
+            this.closeLabel.MouseEnter += new System.EventHandler(this.CloseLabel_MouseEnter);
+            this.closeLabel.MouseLeave += new System.EventHandler(this.CloseLabel_MouseLeave);
             // 
             // maximizeLabel
             // 
@@ -73,21 +75,26 @@
             this.maximizeLabel.TabIndex = 1;
             this.maximizeLabel.Text = "■";
             this.maximizeLabel.Click += new System.EventHandler(this.MaximizeLabel_Click);
+            this.maximizeLabel.MouseEnter += new System.EventHandler(this.MaximizeLabel_MouseEnter);
+            this.maximizeLabel.MouseLeave += new System.EventHandler(this.MaximizeLabel_MouseLeave);
             // 
             // minimizeLabel
             // 
             this.minimizeLabel.AutoSize = true;
             this.minimizeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizeLabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeLabel.Location = new System.Drawing.Point(10, 0);
+            this.minimizeLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.minimizeLabel.Location = new System.Drawing.Point(12, 0);
             this.minimizeLabel.Name = "minimizeLabel";
-            this.minimizeLabel.Size = new System.Drawing.Size(20, 22);
+            this.minimizeLabel.Size = new System.Drawing.Size(18, 19);
             this.minimizeLabel.TabIndex = 2;
             this.minimizeLabel.Text = "-";
             this.minimizeLabel.Click += new System.EventHandler(this.CloseLabel_Click);
+            this.minimizeLabel.MouseEnter += new System.EventHandler(this.MinimizeLabel_MouseEnter);
+            this.minimizeLabel.MouseLeave += new System.EventHandler(this.MinimizeLabel_MouseLeave);
             // 
             // pagesPanel
             // 
+            this.pagesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.pagesPanel.Location = new System.Drawing.Point(214, 30);
             this.pagesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pagesPanel.Name = "pagesPanel";
@@ -106,7 +113,7 @@
             // 
             // ucSideMenu
             // 
-            this.ucSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
+            this.ucSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.ucSideMenu.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ucSideMenu.ForeColor = System.Drawing.Color.White;
             this.ucSideMenu.Location = new System.Drawing.Point(4, 30);
@@ -120,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1118, 624);
             this.Controls.Add(this.currentUserLabel);
             this.Controls.Add(this.pagesPanel);

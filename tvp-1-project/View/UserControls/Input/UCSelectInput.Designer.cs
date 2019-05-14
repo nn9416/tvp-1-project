@@ -46,9 +46,10 @@
             // 
             // comboBox
             // 
+            this.comboBox.BackColor = System.Drawing.Color.White;
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Location = new System.Drawing.Point(10, 20);
             this.comboBox.Name = "comboBox";

@@ -51,6 +51,7 @@ namespace tvp_1_project.View.Pages.Admin
             ucDataViewer.DataGridView.Columns["DateFrom"].HeaderText = "Datum od";
             ucDataViewer.DataGridView.Columns["DateTo"].HeaderText = "Datum do";
             ucDataViewer.DataGridView.Columns["DayPrice"].HeaderText = "Cena za dan";
+            ucDataViewer.SetSearchCategoriesComboBox();
         }
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
@@ -90,6 +91,16 @@ namespace tvp_1_project.View.Pages.Admin
                 DateTo,
                 Price
             };
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
 
         private UCSelectInput Car { get; set; }
