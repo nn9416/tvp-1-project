@@ -76,7 +76,7 @@
             // 
             // firstNameUcTextInput
             // 
-            this.firstNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.firstNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.firstNameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.firstNameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.firstNameUcTextInput.LabelText = "Ime:";
@@ -87,7 +87,7 @@
             // 
             // lastNameUcTextInput
             // 
-            this.lastNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.lastNameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.lastNameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.lastNameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.lastNameUcTextInput.LabelText = "Prezime:";
@@ -98,7 +98,7 @@
             // 
             // ssnUcTextInput
             // 
-            this.ssnUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.ssnUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.ssnUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ssnUcTextInput.ForeColor = System.Drawing.Color.White;
             this.ssnUcTextInput.LabelText = "JMBG:";
@@ -120,7 +120,7 @@
             // 
             // phoneUcTextInput
             // 
-            this.phoneUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.phoneUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.phoneUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.phoneUcTextInput.ForeColor = System.Drawing.Color.White;
             this.phoneUcTextInput.LabelText = "Telefon:";
@@ -131,7 +131,7 @@
             // 
             // usernameUcTextInput
             // 
-            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.usernameUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.usernameUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.usernameUcTextInput.ForeColor = System.Drawing.Color.White;
             this.usernameUcTextInput.LabelText = "Korisničko ime:";
@@ -142,7 +142,7 @@
             // 
             // passwordUcTextInput
             // 
-            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.passwordUcTextInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.passwordUcTextInput.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.passwordUcTextInput.ForeColor = System.Drawing.Color.White;
             this.passwordUcTextInput.LabelText = "Lozinka:";
@@ -153,7 +153,7 @@
             // 
             // createUserButton
             // 
-            this.createUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.createUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.createUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createUserButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.createUserButton.Location = new System.Drawing.Point(20, 360);
@@ -167,7 +167,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.cancelButton.Location = new System.Drawing.Point(20, 396);
@@ -190,12 +190,14 @@
             this.closeLabel.TabIndex = 1;
             this.closeLabel.Text = "X";
             this.closeLabel.Click += new System.EventHandler(this.Cancel_Click);
+            this.closeLabel.MouseEnter += new System.EventHandler(this.CloseLabel_MouseEnter);
+            this.closeLabel.MouseLeave += new System.EventHandler(this.CloseLabel_MouseLeave);
             // 
             // FRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(323, 478);
             this.Controls.Add(this.closeLabel);
             this.Controls.Add(this.tableLayoutPanel);

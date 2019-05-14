@@ -46,6 +46,7 @@
             // 
             // mainFlowLayoutPanel
             // 
+            this.mainFlowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.mainFlowLayoutPanel.Controls.Add(this.adminFlowLayoutPanel);
             this.mainFlowLayoutPanel.Controls.Add(this.customerFlowLayoutPanel);
             this.mainFlowLayoutPanel.Controls.Add(this.logoutButton);
@@ -74,7 +75,7 @@
             // 
             // carsButton
             // 
-            this.carsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.carsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.carsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.carsButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.carsButton.Location = new System.Drawing.Point(8, 13);
@@ -88,7 +89,7 @@
             // 
             // customersButton
             // 
-            this.customersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.customersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.customersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customersButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.customersButton.Location = new System.Drawing.Point(8, 59);
@@ -102,7 +103,7 @@
             // 
             // offersButton
             // 
-            this.offersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.offersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.offersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.offersButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.offersButton.Location = new System.Drawing.Point(8, 105);
@@ -116,7 +117,7 @@
             // 
             // bookingsButton
             // 
-            this.bookingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.bookingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.bookingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bookingsButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.bookingsButton.Location = new System.Drawing.Point(8, 151);
@@ -130,7 +131,7 @@
             // 
             // statisticsButton
             // 
-            this.statisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.statisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.statisticsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.statisticsButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.statisticsButton.Location = new System.Drawing.Point(8, 197);
@@ -156,7 +157,7 @@
             // 
             // currentBookingsButton
             // 
-            this.currentBookingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.currentBookingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.currentBookingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.currentBookingsButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.currentBookingsButton.Location = new System.Drawing.Point(8, 13);
@@ -170,7 +171,7 @@
             // 
             // bookNewButton
             // 
-            this.bookNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.bookNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.bookNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bookNewButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.bookNewButton.Location = new System.Drawing.Point(8, 59);
@@ -184,7 +185,7 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
+            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(71)))), ((int)(((byte)(84)))));
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.logoutButton.Location = new System.Drawing.Point(8, 345);
@@ -201,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
             this.Controls.Add(this.mainFlowLayoutPanel);
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.White;

@@ -45,7 +45,7 @@
             // 
             // textBox
             // 
-            this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox.ForeColor = System.Drawing.Color.White;
             this.textBox.Location = new System.Drawing.Point(15, 19);
@@ -57,7 +57,7 @@
             // 
             // underLine
             // 
-            this.underLine.BackColor = System.Drawing.Color.LightGray;
+            this.underLine.BackColor = System.Drawing.Color.DarkGray;
             this.underLine.ForeColor = System.Drawing.Color.White;
             this.underLine.Location = new System.Drawing.Point(10, 34);
             this.underLine.Name = "underLine";
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.Controls.Add(this.underLine);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.label);

@@ -8,6 +8,6 @@ namespace tvp_1_project.View.Pages.Admin
     {
         PCars Presenter { get; set; }
         void PopulateDataViewer(List<Car> data);
-        void UpdateDataViewer(List<Car> data);
+        void UpdateDataViewer(List<Car> data);     
     }
 }

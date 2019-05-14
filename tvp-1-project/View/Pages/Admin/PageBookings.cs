@@ -59,6 +59,7 @@ namespace tvp_1_project.View.Pages.Admin
             ucDataViewer.DataGridView.Columns["DateFrom"].HeaderText = "Datum preuzimanja";
             ucDataViewer.DataGridView.Columns["DateTo"].HeaderText = "Datum vraćanja";
             ucDataViewer.DataGridView.Columns["Price"].HeaderText = "Cena";
+            ucDataViewer.SetSearchCategoriesComboBox();
         }
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
@@ -132,7 +133,17 @@ namespace tvp_1_project.View.Pages.Admin
             OffersDataGridView.Columns["DateTo"].HeaderText = "Datum do";
             OffersDataGridView.Columns["DayPrice"].HeaderText = "Cena za dan";
         }
-        
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
         private DataGridView OffersDataGridView { get => offersDataGridView; }
         private UCSelectInput SelectCustomer { get; set; }
         private UCSelectInput SelectCar { get; set; }

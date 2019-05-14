@@ -10,7 +10,7 @@ namespace tvp_1_project.View
     {
         public FRegistration()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         #region IRegistrationView
@@ -60,12 +60,14 @@ namespace tvp_1_project.View
             RegistrationProcessInfo(Presenter.TryCreateNew(values));
         }
 
-        private void Cancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void Cancel_Click(object sender, EventArgs e) => Close();
 
-        // Move form with BorderStyle = None
+        #region Form custom title bar events
+        private void CloseLabel_MouseEnter(object sender, EventArgs e) => closeLabel.ForeColor = Color.FromArgb(239, 89, 111);
+
+        private void CloseLabel_MouseLeave(object sender, EventArgs e) => closeLabel.ForeColor = Color.White;
+        #endregion
+        #region Move form without borders
         private bool mouseDown;
         private Point lastLocation;
 
@@ -79,15 +81,13 @@ namespace tvp_1_project.View
         {
             if (mouseDown)
             {
-                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
-                this.Update();
+                Location = new Point((Location.X - lastLocation.X) + e.X, (Location.Y - lastLocation.Y) + e.Y);
+                Update();
             }
         }
 
-        private void FRegistration_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
+        private void FRegistration_MouseUp(object sender, MouseEventArgs e) => mouseDown = false;
+        #endregion
         #endregion
     }
 }
