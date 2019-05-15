@@ -76,7 +76,7 @@ namespace tvp_1_project.View
             pagesPanel.Controls.Add(Pages[pageName] as UserControl);
             Pages[pageName].Dock = DockStyle.Fill;
         }
-
+         
         private void UcDataView_CrudButtonClick(object sender, CustomEventArgs e) => Presenter.PerformCRUD(((Button)sender).Tag.ToString(), e.Data);
 
         #region Form custom title bar events

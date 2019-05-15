@@ -21,9 +21,9 @@ namespace tvp_1_project.Model
             Price = "0";
             Display = ToString();
         }
-        public Booking(Customer customer, Car car, DateTime dateFrom, DateTime dateTo, string price)
+        public Booking(string id, Customer customer, Car car, DateTime dateFrom, DateTime dateTo, string price)
         {
-            Id = Guid.NewGuid().ToString();
+            Id = id;
             Customer = customer;
             Car = car;
             DateFrom = dateFrom;

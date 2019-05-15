@@ -21,6 +21,16 @@ namespace tvp_1_project.Model
             display = ToString();
             Bookings = new List<Booking>();
         }
+        public Offer(string id, Car car, DateTime dateFrom, DateTime dateTo, string dayPrice)
+        {
+            Id = id;
+            Car = car;
+            DateFrom = dateFrom.Date;
+            DateTo = dateTo.Date;
+            DayPrice = dayPrice;
+            display = ToString();
+            Bookings = new List<Booking>();
+        }
 
         #region ISerializable
         public Offer(SerializationInfo info, StreamingContext context)

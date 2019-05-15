@@ -13,9 +13,9 @@ namespace tvp_1_project.Model
 
         public User(string username, string password)
         {
-            this.Username = username;
-            this.Password = password;
-            this.Display = ToString();
+            Username = username;
+            Password = password;
+            Display = ToString();
         }        
 
         #region ISerializable

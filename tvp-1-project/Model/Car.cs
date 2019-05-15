@@ -26,6 +26,20 @@ namespace tvp_1_project.Model
             NumberOfDoors = int.Parse(numberOfDoors);
             Display = ToString();
         }
+        public Car(string id, string productionYear, string make, string model, string displacement, string fuel, string drive, string transmission, string body, string numberOfDoors)
+        {
+            Id = id;
+            ProductionYear = int.Parse(productionYear);
+            Make = make;
+            Model = model;
+            Displacement = int.Parse(displacement);
+            Fuel = fuel;
+            Drive = drive;
+            Transmission = transmission;
+            Body = body;
+            NumberOfDoors = int.Parse(numberOfDoors);
+            Display = ToString();
+        }
 
         #region ISerializable
         public Car(SerializationInfo info, StreamingContext context)

@@ -18,6 +18,15 @@ namespace tvp_1_project.Model
             BirthDate = birthDate.Date;
             PhoneNumber = phoneNumber;
         }
+        public Customer(string id, string firstName, string lastName, string ssn, DateTime birthDate, string phoneNumber, string username, string password) : base(username, password)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Ssn = ssn;
+            BirthDate = birthDate.Date;
+            PhoneNumber = phoneNumber;
+        }
 
         #region ISerializable
         public Customer(SerializationInfo info, StreamingContext context) : base(info, context)
