@@ -95,10 +95,10 @@
             // pagesPanel
             // 
             this.pagesPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
-            this.pagesPanel.Location = new System.Drawing.Point(214, 30);
+            this.pagesPanel.Location = new System.Drawing.Point(214, 35);
             this.pagesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.pagesPanel.Name = "pagesPanel";
-            this.pagesPanel.Size = new System.Drawing.Size(900, 590);
+            this.pagesPanel.Size = new System.Drawing.Size(900, 585);
             this.pagesPanel.TabIndex = 3;
             // 
             // currentUserLabel

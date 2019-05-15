@@ -83,7 +83,7 @@ namespace tvp_1_project.View
         private void FMain_Resize(object sender, EventArgs e)
         {
             ResponsiveLayout.ChangeWidth(pagesPanel, ClientSize.Width, ucSideMenu.Width + 8);
-            ResponsiveLayout.ChangeHeight(pagesPanel, ClientSize.Height, 34);
+            ResponsiveLayout.ChangeHeight(pagesPanel, ClientSize.Height, 39);
             ResponsiveLayout.ChangeHeight(ucSideMenu, pagesPanel.Height);
 
             if (this.WindowState == FormWindowState.Maximized)

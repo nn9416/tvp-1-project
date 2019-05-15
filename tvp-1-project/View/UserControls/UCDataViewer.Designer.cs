@@ -84,8 +84,8 @@
             this.mainSplitContainer.Panel2.Controls.Add(this.crudSplitContainer);
             this.mainSplitContainer.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.mainSplitContainer.Panel2MinSize = 215;
-            this.mainSplitContainer.Size = new System.Drawing.Size(900, 590);
-            this.mainSplitContainer.SplitterDistance = 374;
+            this.mainSplitContainer.Size = new System.Drawing.Size(900, 585);
+            this.mainSplitContainer.SplitterDistance = 369;
             this.mainSplitContainer.SplitterWidth = 1;
             this.mainSplitContainer.TabIndex = 0;
             // 
@@ -107,7 +107,7 @@
             // dataSearchSplitContainer.Panel2
             // 
             this.dataSearchSplitContainer.Panel2.Controls.Add(this.dataGridView);
-            this.dataSearchSplitContainer.Size = new System.Drawing.Size(900, 374);
+            this.dataSearchSplitContainer.Size = new System.Drawing.Size(900, 369);
             this.dataSearchSplitContainer.SplitterDistance = 25;
             this.dataSearchSplitContainer.SplitterWidth = 1;
             this.dataSearchSplitContainer.TabIndex = 1;
@@ -166,6 +166,7 @@
             this.searchValueTextBox.Name = "searchValueTextBox";
             this.searchValueTextBox.Size = new System.Drawing.Size(190, 20);
             this.searchValueTextBox.TabIndex = 3;
+            this.searchValueTextBox.TextChanged += new System.EventHandler(this.SearchValueTextBox_TextChanged);
             // 
             // dataGridView
             // 
@@ -191,7 +192,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(181)))), ((int)(((byte)(186)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(57)))), ((int)(((byte)(98)))));
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -207,7 +208,7 @@
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(900, 348);
+            this.dataGridView.Size = new System.Drawing.Size(900, 343);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.DataGridView_SelectionChanged);
             // 
@@ -326,9 +327,9 @@
             this.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimumSize = new System.Drawing.Size(900, 590);
+            this.MinimumSize = new System.Drawing.Size(900, 585);
             this.Name = "UCDataViewer";
-            this.Size = new System.Drawing.Size(900, 590);
+            this.Size = new System.Drawing.Size(900, 585);
             this.Load += new System.EventHandler(this.UCDataViewer_Load);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
