@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="BussinesLogic\Authentication.cs" />
+    <Compile Include="BussinesLogic\BookingsValidation.cs" />
     <Compile Include="BussinesLogic\CustomEventArgs.cs" />
     <Compile Include="BussinesLogic\ResponsiveLayout.cs" />
     <Compile Include="BussinesLogic\Validation.cs" />
