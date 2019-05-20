@@ -57,7 +57,7 @@ namespace tvp_1_project.Model
             info.AddValue("Price", Price);
         }
         #endregion
-
+        
         #region IConnection
         public void Create() => FileSystemCRUD.Create(path: $@"{DIRECTORY}\{Id}", serializableData: this);
 
