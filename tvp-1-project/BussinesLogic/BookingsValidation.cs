@@ -21,17 +21,13 @@ namespace tvp_1_project.BussinesLogic
             // Booking is in one offer
             else if (endOffer == null)
             {
+                booking.Price = ((booking.DateTo.Date - booking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
                 startOffer.Bookings.Add(booking);
                 return true;
             }
-            
-            // Middle offers are not "touching"
+
+            // Middle offers are not "touching" or there are no middle offers (only start and end offers)
             if (middleOffers == null)
-            {
-                return false;
-            }
-            // There are no middle offers (only start and end offers)
-            else if (middleOffers.Count == 0)
             {
                 if (AreOffersTouching(startOffer, endOffer))
                 {
@@ -54,14 +50,6 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (AreOffersTouching(startOffer, middleOffers.ElementAt(0)) && AreOffersTouching(middleOffers.ElementAt(middleOffers.Count), endOffer))
                 {
-                    for (int i = 0; i < middleOffers.Count - 1; i++)
-                    {
-                        if (!AreOffersTouching(middleOffers.ElementAt(i), middleOffers.ElementAt(i + 1)) || middleOffers.ElementAt(i).Bookings.Count > 0)
-                        {
-                            return false;
-                        }
-                    }
-
                     Booking startBooking = booking;
                     startBooking.DateTo = startOffer.DateTo;
                     startBooking.Price = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
@@ -121,14 +109,26 @@ namespace tvp_1_project.BussinesLogic
         {
             List<Offer> middleOffers = new List<Offer>();
 
-            foreach (Offer offer in offers)            
-                if (startOffer.DateTo < offer.DateFrom && endOffer.DateFrom > offer.DateTo)                
+            foreach (Offer offer in offers)
+            {
+                if (startOffer.DateTo < offer.DateFrom && endOffer.DateFrom > offer.DateTo)
+                {
                     middleOffers.Add(offer);
+                }                    
+            }
 
             if (middleOffers.Count > 0)
+            {
+                for (int i = 0; i < middleOffers.Count - 1; i++)
+                {
+                    if (!AreOffersTouching(middleOffers.ElementAt(i), middleOffers.ElementAt(i + 1)) || middleOffers.ElementAt(i).Bookings.Count > 0)
+                    {
+                        return null;
+                    }
+                }
                 return middleOffers;
-            else
-                return null;
+            }
+            return null;            
         }
 
         private static bool AreOffersTouching(Offer startOffer, Offer endOffer) => (endOffer.DateFrom.Date - startOffer.DateTo.Date).Days == 1;
@@ -136,9 +136,15 @@ namespace tvp_1_project.BussinesLogic
         private static bool AreBookingDatesFree(Offer offer, Booking booking)
         {
             if (offer.Bookings.Count > 0)
+            {
                 foreach (Booking offerBooking in offer.Bookings)
+                {
                     if (offerBooking.DateFrom < booking.DateTo && booking.DateFrom < offerBooking.DateTo)
+                    {
                         return false;
+                    }
+                }
+            }
                             
             return true;
         }
