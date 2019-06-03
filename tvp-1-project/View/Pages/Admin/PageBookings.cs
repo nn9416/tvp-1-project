@@ -50,7 +50,7 @@ namespace tvp_1_project.View.Pages.Admin
         public PBookings Presenter { get; set; }
         #endregion
 
-        #region Events
+        #region Events 
         private void UcDataViewer_Load(object sender, EventArgs e)
         {
             Presenter.GetBookings();
@@ -64,24 +64,26 @@ namespace tvp_1_project.View.Pages.Admin
 
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
         {
+            Booking tempBooking = e.Data as Booking;
+
             Dictionary<string, object> values = new Dictionary<string, object>()
             {
+                {"Id",  tempBooking.Id},
                 {"Customer", SelectCustomer.ComboBox.SelectedItem },
                 {"Car", SelectCar.ComboBox.SelectedItem },
                 {"DateFrom", DateFrom.DateTimePicker.Value.Date.ToString("dd.MM.yyyy.") },
                 {"DateTo", DateTo.DateTimePicker.Value.Date.ToString("dd.MM.yyyy.") },
             };
-
-            // TODO: Uncomment when validation for bookings is implemented
-            //if (Presenter.TryCreateNew(values))
-            //{
-            //    CrudButtonClick?.Invoke(sender, e);
-            //    Presenter.UpdateData();
-            //}
-            //else
-            //{
-            //    // TODO: Notify user that input is wrong
-            //}
+        
+            if (Presenter.TryCreateNew(values))
+            {
+                CrudButtonClick?.Invoke(sender, e);
+                Presenter.UpdateData();
+            }
+            else
+            {
+                // TODO: Notify user that input is wrong
+            }
         }
 
         private void CustomerComboBox_SelectedIndexChanged(object sender, EventArgs e)

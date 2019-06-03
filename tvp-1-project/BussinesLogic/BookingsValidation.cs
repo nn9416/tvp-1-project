@@ -5,7 +5,7 @@ using tvp_1_project.Model;
 namespace tvp_1_project.BussinesLogic
 {
     public static class BookingsValidation
-    {
+    { 
         public static bool IsBookingInRange(Booking booking)
         {
             List<Offer> offers = GetOffersForCar(booking.Car);
@@ -154,7 +154,7 @@ namespace tvp_1_project.BussinesLogic
             List<Offer> offers = Offer.ReadAll();
             List<Offer> offersForCar = new List<Offer>();
 
-            foreach (Offer offer in offers.Where(o => o.Car.Display.Equals(car.Display)))
+            foreach (Offer offer in offers.Where(o => o.Car.Id.Equals(car.Id)))
             {
                 offersForCar.Add(offer);
             }
