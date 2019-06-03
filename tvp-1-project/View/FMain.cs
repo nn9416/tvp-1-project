@@ -48,7 +48,7 @@ namespace tvp_1_project.View
             CarsPage.CrudButtonClick += UcDataView_CrudButtonClick;
             CustomersPage.CrudButtonClick += UcDataView_CrudButtonClick;
             OffersPage.CrudButtonClick += UcDataView_CrudButtonClick;
-
+            BookingsPage.CrudButtonClick += UcDataView_CrudButtonClick;
             if (isAdmin)
             {
                 pagesPanel.Controls.Add(Pages["cars"] as UserControl);

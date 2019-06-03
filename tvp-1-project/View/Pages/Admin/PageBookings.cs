@@ -65,6 +65,7 @@ namespace tvp_1_project.View.Pages.Admin
         private void UcDataViewerButtons_Click(object sender, CustomEventArgs e)
         {
             Booking tempBooking = e.Data as Booking;
+            Button button = sender as Button;
 
             Dictionary<string, object> values = new Dictionary<string, object>()
             {
@@ -73,11 +74,11 @@ namespace tvp_1_project.View.Pages.Admin
                 {"Car", SelectCar.ComboBox.SelectedItem },
                 {"DateFrom", DateFrom.DateTimePicker.Value.Date.ToString("dd.MM.yyyy.") },
                 {"DateTo", DateTo.DateTimePicker.Value.Date.ToString("dd.MM.yyyy.") },
+                {"Mode", button.Tag }
             };
         
-            if (Presenter.TryCreateNew(values))
+            if (Presenter.ValidateInput(values))
             {
-                CrudButtonClick?.Invoke(sender, e);
                 Presenter.UpdateData();
             }
             else

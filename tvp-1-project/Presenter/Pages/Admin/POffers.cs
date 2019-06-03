@@ -28,7 +28,6 @@ namespace tvp_1_project.Presenter.Pages.Admin
 
         internal void UpdateCarsComboBox() => _view.SetCarsComboBox(_repository.GetCars().ToList());
 
-        // TODO: Implement validation for offers
-        //internal bool TryCreateNew(Dictionary<string, object> values) => Validation.ValidateOffer(values);
+        internal bool TryCreateNew(Dictionary<string, object> values) => Validation.ValidateOffer(values);
     }
 }

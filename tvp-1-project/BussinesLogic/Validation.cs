@@ -145,20 +145,59 @@ namespace tvp_1_project.BussinesLogic
         }
         #endregion
 
+        #region Offer Validation
+        internal static bool ValidateOffer(Dictionary<string, object> values)
+        {
+            DateTime dateFrom = DateTime.ParseExact(values["DateFrom"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
+            DateTime dateTo = DateTime.ParseExact(values["DateTo"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
+
+            List<bool> validations = new List<bool>()
+            {
+                IsCarAvaliable(values["Car"] as Car, dateFrom, dateTo),
+                IsDateInRange(dateFrom, dateTo),
+                IsPriceInt(values["Price"] as string)
+            };
+
+            foreach (bool value in validations)
+            {
+                if (!value)
+                    return false;
+            }
+            return true;
+        }
+
+        internal static bool IsCarAvaliable(Car car, DateTime dateFrom, DateTime dateTo)
+        {
+            List<Offer> offers = Offer.ReadAll();
+            foreach (Offer offer in offers.Where(o => o.Car.Id.Equals(car.Id)))
+            {
+                if (offer.DateFrom < dateTo && dateFrom < offer.DateTo)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        internal static bool IsPriceInt(string price) => int.TryParse(price, out int result);
+        #endregion
+
         #region Booking Validation
         internal static bool ValidateBooking(Dictionary<string, object> values)
-        {            
+        {
             Customer customer = values["Customer"] as Customer;
             Car car = values["Car"] as Car;
             DateTime dateFrom = DateTime.ParseExact(values["DateFrom"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
             DateTime dateTo = DateTime.ParseExact(values["DateTo"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
+
+            string mode = values["Mode"] as string;
 
             Booking booking = new Booking(customer, car, dateFrom, dateTo)
             {
                 Id = values["Id"].ToString()
             };
 
-            return IsDateInRange(dateFrom, dateTo) && BookingsValidation.IsBookingInRange(booking);                        
+            return IsDateInRange(dateFrom, dateTo) && BookingsValidation.IsBookingInRange(booking, mode);                      
         }
         #endregion
 
