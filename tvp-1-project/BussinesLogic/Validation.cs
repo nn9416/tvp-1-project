@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using tvp_1_project.Model;
 
 namespace tvp_1_project.BussinesLogic
 {
@@ -143,5 +144,30 @@ namespace tvp_1_project.BussinesLogic
             }
         }
         #endregion
+
+        #region Booking Validation
+        internal static bool ValidateBooking(Dictionary<string, object> values)
+        {            
+            Customer customer = values["Customer"] as Customer;
+            Car car = values["Car"] as Car;
+            DateTime dateFrom = DateTime.ParseExact(values["DateFrom"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
+            DateTime dateTo = DateTime.ParseExact(values["DateTo"] as string, "dd.MM.yyyy.", CultureInfo.InvariantCulture);
+
+            Booking booking = new Booking(customer, car, dateFrom, dateTo)
+            {
+                Id = values["Id"].ToString()
+            };
+
+            return IsDateInRange(dateFrom, dateTo) && BookingsValidation.IsBookingInRange(booking);                        
+        }
+        #endregion
+
+        internal static bool IsDateInRange(DateTime dateFrom, DateTime dateTo)
+        {
+            if (dateFrom.Date < dateTo.Date && dateFrom.Date >= DateTime.Now.Date)
+                return true;
+            // TODO: Notify user of wrong input for dates
+            return false;
+        }
     }
 }
