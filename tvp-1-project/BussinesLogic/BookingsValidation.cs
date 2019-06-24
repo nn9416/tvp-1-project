@@ -5,12 +5,15 @@ using tvp_1_project.Model;
 namespace tvp_1_project.BussinesLogic
 {
     public static class BookingsValidation
-    { 
-        public static bool IsBookingInRange(Booking booking)
+    {
+        static Booking startBooking;
+        static Booking endBooking;
+
+        public static bool IsBookingInRange(Booking booking, string mode)
         {
             List<Offer> offers = GetOffersForCar(booking.Car);
             Offer startOffer = GetStartOffer(offers, booking);
-            Offer endOffer = GetEndOffer(offers, booking);
+            Offer endOffer = GetEndOffer(offers, booking, startOffer);
             List<Offer> middleOffers = GetMiddleOffers(offers, startOffer, endOffer, booking);
 
             // Booking is out of any offer
@@ -20,9 +23,21 @@ namespace tvp_1_project.BussinesLogic
             }
             // Booking is in one offer
             else if (endOffer == null)
-            {
-                booking.Price = ((booking.DateTo.Date - booking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
-                startOffer.Bookings.Add(booking);
+            {                
+                if (mode.Equals("Create"))
+                {                    
+                    booking.Price = ((booking.DateTo.Date - booking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
+                    startOffer.Bookings.Add(booking);
+                    booking.Create();
+                }
+                else if (mode.Equals("Delete"))
+                {
+                    foreach (Booking b in startOffer.Bookings.Where(b => b.Id.Equals(booking.Id)))
+                    {
+                        startOffer.Bookings.Remove(b);
+                    }                    
+                }
+
                 return true;
             }
 
@@ -31,16 +46,33 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (AreOffersTouching(startOffer, endOffer))
                 {
-                    Booking startBooking = booking;
-                    startBooking.DateTo = startOffer.DateTo;
+                    startBooking.DateTo = startOffer.DateTo;                    
                     startBooking.Price = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
 
-                    Booking endBooking = booking;
-                    endBooking.DateFrom = endOffer.DateFrom;
+                    endBooking.DateFrom = endOffer.DateFrom;                    
                     endBooking.Price = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice)).ToString();
-
+                    
                     startOffer.Bookings.Add(startBooking);
-                    endOffer.Bookings.Add(endBooking);
+                    endOffer.Bookings.Add(endBooking);                    
+
+                    if (mode.Equals("Create"))
+                    {
+                        booking.Price = (int.Parse(startBooking.Price) + int.Parse(endBooking.Price)).ToString();
+                        booking.Create();
+                    }
+                    else if (mode.Equals("Delete"))
+                    {
+                        foreach (Booking b in startOffer.Bookings.Where(b => b.Id.Equals(booking.Id)))
+                        {
+                            startOffer.Bookings.Remove(b);                            
+                        }
+
+                        foreach (Booking b in endOffer.Bookings.Where(b => b.Id.Equals(booking.Id)))
+                        {
+                            endOffer.Bookings.Remove(b);                            
+                        }
+                    }
+
                     return true;
                 }
                 return false;
@@ -50,23 +82,29 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (AreOffersTouching(startOffer, middleOffers.ElementAt(0)) && AreOffersTouching(middleOffers.ElementAt(middleOffers.Count), endOffer))
                 {
-                    Booking startBooking = booking;
                     startBooking.DateTo = startOffer.DateTo;
                     startBooking.Price = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
 
-                    Booking endBooking = booking;
                     endBooking.DateFrom = endOffer.DateFrom;
                     endBooking.Price = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice)).ToString();
 
+                    int totalPrice = int.Parse(startBooking.Price) + int.Parse(endBooking.Price);
+
                     foreach (Offer offer in middleOffers)
                     {
-                        Booking tempBooking = booking;
-                        tempBooking.DateFrom = offer.DateFrom;
-                        tempBooking.DateTo = offer.DateTo;
-                        tempBooking.Price = ((tempBooking.DateTo.Date - tempBooking.DateFrom.Date).Days * int.Parse(offer.DayPrice)).ToString();
+                        Booking tempBooking = new Booking(booking.Id, booking.Customer, booking.Car, booking.DateFrom, booking.DateTo, "0")
+                        {
+                            DateFrom = offer.DateFrom,
+                            DateTo = offer.DateTo,
+                            Price = ((offer.DateTo.Date - offer.DateFrom.Date).Days * int.Parse(offer.DayPrice)).ToString()
+                        };
+
+                        totalPrice += int.Parse(tempBooking.Price);
                         offer.Bookings.Add(tempBooking);
                     }
 
+                    booking.Price = totalPrice.ToString();
+                    booking.Create();
                     return true;
                 }
                 return false;
@@ -79,24 +117,29 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (offer.DateFrom <= booking.DateFrom && offer.DateTo >= booking.DateFrom)
                 {
+                    startBooking = new Booking(booking.Id, booking.Customer, booking.Car, booking.DateFrom, booking.DateTo, "0");
                     if (offer.DateTo < booking.DateTo)
-                        booking.DateTo = offer.DateTo;
+                        startBooking.DateTo = offer.DateTo;      
 
-                    if (AreBookingDatesFree(offer, booking))
+                    if (AreBookingDatesFree(offer, startBooking))
                         return offer;
                 }
             }
             return null;
         }
 
-        private static Offer GetEndOffer(List<Offer> offers, Booking booking)
+        private static Offer GetEndOffer(List<Offer> offers, Booking booking, Offer startOffer)
         {
             foreach (Offer offer in offers)
             {
-                if (offer.DateFrom <= booking.DateTo && offer.DateTo >= booking.DateTo)
+                if (!offer.Equals(startOffer) && offer.DateFrom <= booking.DateTo && offer.DateTo >= booking.DateTo)
                 {
-                    booking.DateFrom = offer.DateFrom;
-                    if (AreBookingDatesFree(offer, booking))
+                    endBooking = new Booking(booking.Id, booking.Customer, booking.Car, booking.DateFrom, booking.DateTo, "0")
+                    {
+                        DateFrom = offer.DateFrom
+                    };
+
+                    if (AreBookingDatesFree(offer, endBooking))
                     {
                         return offer;
                     }
@@ -108,6 +151,9 @@ namespace tvp_1_project.BussinesLogic
         private static List<Offer> GetMiddleOffers(List<Offer> offers, Offer startOffer, Offer endOffer, Booking booking)
         {
             List<Offer> middleOffers = new List<Offer>();
+
+            if (endOffer == null)
+                return null;
 
             foreach (Offer offer in offers)
             {
