@@ -21,6 +21,17 @@ namespace tvp_1_project.Model
             Price = "0";
             Display = ToString();
         }
+
+        public Booking(string id, Customer customer, Car car, DateTime dateFrom, DateTime dateTo)
+        {
+            Id = id;
+            Customer = customer;
+            Car = car;
+            DateFrom = dateFrom;
+            DateTo = dateTo;
+            Display = ToString();
+        }
+
         public Booking(string id, Customer customer, Car car, DateTime dateFrom, DateTime dateTo, string price)
         {
             Id = id;

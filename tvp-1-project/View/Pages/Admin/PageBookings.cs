@@ -84,7 +84,7 @@ namespace tvp_1_project.View.Pages.Admin
             else
             {
                 // TODO: Notify user that input is wrong
-            }
+            }        
         }
 
         private void CustomerComboBox_SelectedIndexChanged(object sender, EventArgs e)

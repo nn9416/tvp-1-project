@@ -46,21 +46,18 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (AreOffersTouching(startOffer, endOffer))
                 {
-                    startBooking.DateTo = startOffer.DateTo;
-                    int startPrice = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice));
-                    startBooking.Price = startPrice.ToString();
+                    startBooking.DateTo = startOffer.DateTo;                    
+                    startBooking.Price = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
 
-                    endBooking.DateFrom = endOffer.DateFrom;
-                    int endPrice = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice));
-                    endBooking.Price = endPrice.ToString();
+                    endBooking.DateFrom = endOffer.DateFrom;                    
+                    endBooking.Price = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice)).ToString();
                     
                     startOffer.Bookings.Add(startBooking);
                     endOffer.Bookings.Add(endBooking);                    
 
                     if (mode.Equals("Create"))
                     {
-                        int totalPrice = startPrice + endPrice;
-                        booking.Price = totalPrice.ToString();              
+                        booking.Price = (int.Parse(startBooking.Price) + int.Parse(endBooking.Price)).ToString();
                         booking.Create();
                     }
                     else if (mode.Equals("Delete"))
@@ -85,30 +82,24 @@ namespace tvp_1_project.BussinesLogic
             {
                 if (AreOffersTouching(startOffer, middleOffers.ElementAt(0)) && AreOffersTouching(middleOffers.ElementAt(middleOffers.Count), endOffer))
                 {
-                    int totalPrice = 0;
-
-                    Booking startBooking = booking;
                     startBooking.DateTo = startOffer.DateTo;
-                    int startPrice = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice));
-                    startBooking.Price = startPrice.ToString();
+                    startBooking.Price = ((startBooking.DateTo.Date - startBooking.DateFrom.Date).Days * int.Parse(startOffer.DayPrice)).ToString();
 
-                    Booking endBooking = booking;
                     endBooking.DateFrom = endOffer.DateFrom;
-                    int endPrice = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice));
-                    endBooking.Price = endPrice.ToString();
+                    endBooking.Price = ((endBooking.DateTo.Date - endBooking.DateFrom.Date).Days * int.Parse(endOffer.DayPrice)).ToString();
 
-                    totalPrice = startPrice + endPrice;
+                    int totalPrice = int.Parse(startBooking.Price) + int.Parse(endBooking.Price);
 
                     foreach (Offer offer in middleOffers)
                     {
-                        Booking tempBooking = booking;
-                        tempBooking.DateFrom = offer.DateFrom;
-                        tempBooking.DateTo = offer.DateTo;
-                        int tempPrice = ((tempBooking.DateTo.Date - tempBooking.DateFrom.Date).Days * int.Parse(offer.DayPrice));
-                        tempBooking.Price = tempPrice.ToString();
+                        Booking tempBooking = new Booking(booking.Id, booking.Customer, booking.Car, booking.DateFrom, booking.DateTo, "0")
+                        {
+                            DateFrom = offer.DateFrom,
+                            DateTo = offer.DateTo,
+                            Price = ((offer.DateTo.Date - offer.DateFrom.Date).Days * int.Parse(offer.DayPrice)).ToString()
+                        };
 
-                        totalPrice += tempPrice;
-
+                        totalPrice += int.Parse(tempBooking.Price);
                         offer.Bookings.Add(tempBooking);
                     }
 
